@@ -13,6 +13,10 @@ app.use(express.json());
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 })
+pool.connect()
+  .then(() => console.log("✅ Connected to PostgreSQL"))
+  .catch((err) => console.error("❌ PostgreSQL connection error:", err));
+
 
 //Register user here
 app.post("/api/register", async (req, res) => {
