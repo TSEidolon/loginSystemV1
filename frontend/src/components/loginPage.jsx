@@ -19,14 +19,16 @@ const LoginPage = () => {
     //   alert("Login failed: " + err.response.data.error);
     // }
   };
+  
+  const navigateRegister = () => {
+    navigate("/register");
+  }
 
   const handleLoginAlternative = () => {
     window.alert("Server not found fool")
   }
 
-  const navigateRegister = () => {
-    navigate("/register");
-  }
+
   const navigateGuest = () => {
     navigate("/main");
   }

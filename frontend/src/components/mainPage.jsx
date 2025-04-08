@@ -4,7 +4,9 @@ import { useEffect } from "react";
 const MainPage = () => {
   const navigate = useNavigate();
 
-  // Uncomment this to check for tokens when logging in
+
+  // 1. Uncomment everything commented to check for tokens when logging in and remove them when logging out
+
   // useEffect(() => {
   //   const token = localStorage.getItem("token");
   //   if (!token && !localStorage.getItem("guest")) {
@@ -12,8 +14,9 @@ const MainPage = () => {
   //   }
   // }, [navigate]);
 
+
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    // localStorage.removeItem("token");
     navigate("/");
   };
 
