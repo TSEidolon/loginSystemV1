@@ -7,16 +7,22 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+
+  // Uncomment handleLogin body when using the backend
   const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post("http://localhost:5000/api/login", { username, password });
-      localStorage.setItem("token", response.data.token);
-      navigate("/main");
-    } catch (err) {
-      alert("Login failed: " + err.response.data.error);
-    }
+    // e.preventDefault();
+    // try {
+    //   const response = await axios.post("http://localhost:5000/api/login", { username, password });
+    //   // localStorage.setItem("token", response.data.token);
+    //   navigate("/main");
+    // } catch (err) {
+    //   alert("Login failed: " + err.response.data.error);
+    // }
   };
+
+  const handleLoginAlternative = () => {
+    window.alert("Server not found fool")
+  }
 
   const navigateRegister = () => {
     navigate("/register");
@@ -27,7 +33,7 @@ const LoginPage = () => {
 
   return (
     <div className="flex justify-center items-center h-screen">
-      <form className="p-6 bg-gray-200 rounded" onSubmit={handleLogin}>
+      <form className="p-6 bg-gray-200 rounded" onSubmit={()=> {handleLogin(); handleLoginAlternative()}}>
         <h2 className="text-2xl mb-4">Login</h2>
         <input className="p-2 mb-2" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
         <input className="p-2 mb-2" type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
