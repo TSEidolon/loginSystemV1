@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -5,5 +6,10 @@
   --secondary-color: #25A784;
   --tertiary-color: #D5F6ED;
   --quarternary-color: #ABD7CB;
-
+  font-family: "Turret Road", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
+
+
+
