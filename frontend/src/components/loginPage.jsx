@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Eagle from "../assets/images/eagle.png"
+import Global from "../assets/images/global.png"
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -58,10 +60,8 @@ const LoginPage = () => {
               <button className="bg-[var(--quarternary-color)] border-2 border-black   w-[145px] p-2 rounded-sm" type="submit">Login</button>
               <button className="bg-[var(--quarternary-color)] border-2 border-black w-[145px] p-2 rounded-sm" type="button" onClick={navigateRegister}>Register</button>
             </div>
-
-              <img className="absolute z-10 size-[100px]" src="" alt="" />
-              <img className="absolute z-10 size-[100px]" src="" alt="" />
-
+            <img className="absolute top-[3%] right-[5%] z-10 size-[80px]" src={Eagle} alt="" />
+            <img className="absolute bottom-[-6%] right-[44%] z-10 size-[50px]" src={Global} alt="" />
           </form>
           <button className="bg-[var(--quarternary-color)] border-2 border-black text-3xl p-2 rounded w-full" type="button" onClick={navigateGuest}>Guest Login</button>
         </section>
