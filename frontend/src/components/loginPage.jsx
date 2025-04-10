@@ -6,7 +6,7 @@ import Global from "../assets/images/global.png"
 import HeroCamera from "./heroCamera";
 
 import { Canvas } from '@react-three/fiber'
-import { Environment, Stars, PerspectiveCamera, useTexture, OrbitControls } from '@react-three/drei'
+import { Environment, Stars, PerspectiveCamera, useTexture, OrbitControls, Float } from '@react-three/drei'
 
 function ImagePlane({ url }) {
   const texture = useTexture(url);
@@ -63,10 +63,10 @@ const LoginPage = () => {
               <OrbitControls makeDefault />
               <ambientLight intensity={1}/>
               <directionalLight position={[10,10,10]} intensity={0.5}/>
-              <HeroCamera>
+              <Float speed={2} rotationIntensity={1} floatIntensity={2}>
                 <ImagePlane url="/images/logo.png" /> 
-                <Stars saturation={0} count={400} speed={0.5} />
-              </HeroCamera>
+              </Float>
+                <Stars saturation={0} count={400} speed={1} />
               <color attach="background" args={['#092A21']} />
             </Suspense>
           </Canvas>
