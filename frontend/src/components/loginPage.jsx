@@ -54,13 +54,13 @@ const LoginPage = () => {
 
   return (
     
-    <div className="login-background flex flex-col gap-5 justify-center items-center h-full lg:h-screen ">
-      <h2 className="text-[3rem] text-[var(--tertiary-color)]">Service Gurantees Citizenship</h2>
-      <main className="bg-[var(--tertiary-color)] border-black border-2 p-7 flex rounded-md gap-7 lg:w-[1222px] text-[var(--primary-color)]">
+    <div className=" bg-[url(../../public/images/geranimo.jpg)] bg-contain flex flex-col gap-5 justify-center items-center h-full lg:h-screen ">
+      <h2 className="text-[3rem] text-white text-shadow-md text-shadow-black">Service Gurantees Citizenship</h2>
+      <main className="bg-white/10 backdrop-blur-md shadow-md shadow-black  p-7 flex rounded-md gap-7 lg:w-[1222px] text-[var(--primary-color)]">
         <section className="login-left h-[600px] w-[700px] flex justify-center">
-          <Canvas className=" size-full rounded-md border-black border-2">
+          <Canvas className=" size-full rounded-md shadow-md shadow-black">
             <Suspense>
-              <OrbitControls makeDefault />
+              {/* <OrbitControls makeDefault /> */}
               <ambientLight intensity={1}/>
               <directionalLight position={[10,10,10]} intensity={0.5}/>
               <Float speed={2} rotationIntensity={1} floatIntensity={2}>
@@ -72,9 +72,9 @@ const LoginPage = () => {
           </Canvas>
         </section>
         <section className="login-right lg:w-[450px] flex flex-col items-center justify-between ">
-          <h2 className="text-4xl ">Federal Armed Services</h2>
-          <form className="p-6 bg-[var(--tertiary-color)] ring-2 ring-black shadow-md shadow-black  rounded w-full h-[440px] flex justify-center flex-col gap-7 lg:text-xl relative " onSubmit={()=> {handleLogin(); handleLoginAlternative()}}>
-            <h2>Login to Database</h2>
+          <h2 className="text-4xl text-[var(--tertiary-color)] ">Federal Armed Services</h2>
+          <form className="p-6 bg-[var(--tertiary-color)]  shadow-md shadow-black  rounded w-full h-[440px] flex justify-center flex-col gap-7 lg:text-xl relative " onSubmit={()=> {handleLogin(); handleLoginAlternative()}}>
+            <h2 className="text-shadow-md text-shadow-white font-semibold">Login to Database:</h2>
             <div className="flex flex-col">
               <label htmlFor="username">Military-ID</label>
               <input className="bg-[var(--quarternary-color)] p-2 mb-2 border-black border-2" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
@@ -91,7 +91,7 @@ const LoginPage = () => {
             <img className="absolute top-[4%] right-[5%] z-10 size-[80px]" src={Eagle} alt="" />
             <img className="absolute bottom-[6%] right-[44%] z-10 size-[50px]" src={Global} alt="" />
           </form>
-          <button className="bg-[var(--quarternary-color)] border-2 border-black text-3xl p-2 rounded w-full" type="button" onClick={navigateGuest}>Guest Login</button>
+          <button className="bg-[var(--primary-color)] text-[var(--tertiary-color)] text-3xl p-2 rounded w-full" type="button" onClick={navigateGuest}>Guest Login</button>
         </section>
       </main>
     </div>
