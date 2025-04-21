@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router';
-import LoginPage from './components/loginPage.jsx'
-import MainPage from './components/mainPage'
-import RegisterPage from './components/registerPage.jsx'
+import LoginPage from './components/pages/loginPage.jsx'
+import MainPage from './components/pages/mainPage'
+import RegisterPage from './components/pages/registerPage.jsx'
 
 
 

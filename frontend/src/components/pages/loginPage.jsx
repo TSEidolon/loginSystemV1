@@ -1,12 +1,12 @@
 import { useState, Suspense } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Eagle from "../assets/images/eagle.png"
-import Global from "../assets/images/global.png"
-import HeroCamera from "./heroCamera";
+import Eagle from "../../assets/images/eagle.png"
+import Global from "../../assets/images/global.png"
+import SuspenseLoader from "../features/suspenseLoader"; 
 
 import { Canvas } from '@react-three/fiber'
-import { Environment, Stars, PerspectiveCamera, useTexture, OrbitControls, Float } from '@react-three/drei'
+import { Stars, useTexture, Float } from '@react-three/drei'
 
 function ImagePlane({ url }) {
   const texture = useTexture(url);
@@ -25,20 +25,23 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
 
-  // Uncomment handleLogin body when using the backend
+  // Uncomment handleLogin and navigateRegister when using the backend
   const handleLogin = async (e) => {
     // e.preventDefault();
     // try {
     //   const response = await axios.post("http://localhost:5000/api/login", { username, password });
-    //   // localStorage.setItem("token", response.data.token);
+    //   localStorage.setItem("token", response.data.token);
     //   navigate("/main");
     // } catch (err) {
     //   alert("Login failed: " + err.response.data.error);
     // }
   };
-  
   const navigateRegister = () => {
-    navigate("/register");
+    // navigate("/register");
+  }
+
+  const navigateRegisterAlternative = () => {
+    window.alert("Unable To Connect to F.A.S Servers");
   }
 
   const handleLoginAlternative = () => {
@@ -54,13 +57,12 @@ const LoginPage = () => {
 
   return (
     
-    <div className=" bg-[url(../../public/images/geranimo.jpg)] bg-contain flex flex-col gap-5 justify-center items-center h-full lg:h-screen ">
+    <div className=" bg-[url(images/geranimo.jpg)] bg-contain flex flex-col gap-5 justify-center items-center h-full lg:h-screen ">
       <h2 className="text-[3rem] text-white text-shadow-md text-shadow-black">Service Gurantees Citizenship</h2>
       <main className="bg-white/10 backdrop-blur-md shadow-md shadow-black  p-7 flex rounded-md gap-7 lg:w-[1222px] text-[var(--primary-color)]">
         <section className="login-left h-[600px] w-[700px] flex justify-center">
           <Canvas className=" size-full rounded-md shadow-md shadow-black">
-            <Suspense>
-              {/* <OrbitControls makeDefault /> */}
+            <Suspense fallback={<SuspenseLoader/>}>
               <ambientLight intensity={1}/>
               <directionalLight position={[10,10,10]} intensity={0.5}/>
               <Float speed={2} rotationIntensity={1} floatIntensity={2}>
@@ -77,21 +79,21 @@ const LoginPage = () => {
             <h2 className="text-shadow-md text-shadow-white font-semibold">Login to Database:</h2>
             <div className="flex flex-col">
               <label htmlFor="username">Military-ID</label>
-              <input className="bg-[var(--quarternary-color)] p-2 mb-2 border-black border-2" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
+              <input className="bg-[var(--quarternary-color)] p-2 mb-2 border-black border-2 rounded-md" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
             </div>
             <div className="flex flex-col">
               <label htmlFor="username">Password</label>
-              <input className="bg-[var(--quarternary-color)] p-2 mb-2 border-black border-2" type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+              <input className="bg-[var(--quarternary-color)] p-2 mb-2 border-black border-2 rounded-md" type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
             </div>
             <p className="text-center">I'm doing my part</p>
             <div className="flex justify-between">
               <button className="bg-[var(--quarternary-color)] border-2 border-black   w-[145px] p-2 rounded-sm" type="submit">Login</button>
-              <button className="bg-[var(--quarternary-color)] border-2 border-black w-[145px] p-2 rounded-sm" type="button" onClick={navigateRegister}>Register</button>
+              <button className="bg-[var(--quarternary-color)] border-2 border-black w-[145px] p-2 rounded-sm" type="button" onClick={()=> {navigateRegister(); navigateRegisterAlternative()}}>Register</button>
             </div>
             <img className="absolute top-[4%] right-[5%] z-10 size-[80px]" src={Eagle} alt="" />
             <img className="absolute bottom-[6%] right-[44%] z-10 size-[50px]" src={Global} alt="" />
           </form>
-          <button className="bg-[var(--primary-color)] text-[var(--tertiary-color)] text-3xl p-2 rounded w-full" type="button" onClick={navigateGuest}>Guest Login</button>
+          <button className="bg-[var(--primary-color)] text-[var(--tertiary-color)] text-3xl p-2 rounded w-full shadow-md shadow-black" type="button" onClick={navigateGuest}>Guest Login</button>
         </section>
       </main>
     </div>
