@@ -1,7 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
+import { OrbitControls, PerspectiveCamera, Environment } from '@react-three/drei'
+
+import { SphereSciFi } from "../modelComponents/sphereSciFi";
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -38,7 +40,12 @@ const MainPage = () => {
         </div>
       </section>
       <section className="main-right lg:w-[600px] lg:h-full border-black border-2">
-        <p>Hello im right canvas here</p>
+        <Canvas>
+          <SphereSciFi  scale={1.5}/>
+          <Environment preset="sunset" />
+          <ambientLight intensity={1} color="white"/>
+          <directionalLight position={[0, 300, 0]} intensity={1} color="white"/>
+        </Canvas>
       </section>
       </main>
       <div>
