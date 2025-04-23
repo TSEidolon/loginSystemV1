@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -23,16 +25,19 @@ const MainPage = () => {
   return (
     <div className="">
       <main className="hero-section flex justify-evenly items-center h-screen ">
-      <section className="main-left border-black border-2">
-        <h1 className="text-3xl mb-6">Welcome to the Main Page!</h1>
-        <button
-          className="bg-red-500 text-white px-4 py-2 rounded"
-          onClick={handleLogout}
-        >
-          Logout
-        </button>
+      <section className="main-left max-w-[50%] border-black border-2">
+        <h1 className="text-[8rem]  px-2">Welcome to the Main Page!</h1>
+        <p className="text-[2rem] py-6 px-2">Mini Catch Phrase here!</p>
+        <div className="flex justify-start px-2 pb-6 items-center">
+          <button
+            className="bg-red-500 text-white text-2xl w-[400px]  py-2 rounded "
+            onClick={handleLogout}
+          >
+            Logout
+          </button>
+        </div>
       </section>
-      <section className="main-right border-black border-2">
+      <section className="main-right lg:w-[600px] lg:h-full border-black border-2">
         <p>Hello im right canvas here</p>
       </section>
       </main>

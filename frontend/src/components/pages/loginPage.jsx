@@ -68,8 +68,8 @@ const LoginPage = () => {
               <Float speed={2} rotationIntensity={1} floatIntensity={2}>
                 <ImagePlane url="/images/logo.png" /> 
               </Float>
-                <Stars saturation={0} count={400} speed={1} />
-              <color attach="background" args={['#092A21']} />
+                <Stars saturation={1} count={400} speed={1} />
+              <color attach="background" args={['black']} />
             </Suspense>
           </Canvas>
         </section>
