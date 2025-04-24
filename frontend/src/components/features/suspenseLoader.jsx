@@ -17,7 +17,7 @@ const SuspenseLoader = () => {
       <p
         style={{
           fontSize: 30,
-          color: 'white',
+          color: 'orange',
           fontWeight: 800,
 
           
