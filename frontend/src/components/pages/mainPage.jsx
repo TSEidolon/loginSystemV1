@@ -7,6 +7,8 @@ import { SphereSciFi } from "../modelComponents/sphereSciFi";
 import SuspenseLoader from "../features/suspenseLoader";
 import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
 import Eagle from "../../assets/images/eagle.png"
+import Divider from "../../assets/images/divider.png"
+
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -29,13 +31,14 @@ const MainPage = () => {
 
   return (
     <div className=" ">
-      <main className="hero-section  bg-[var(--tertiary-color)] flex justify-evenly items-center h-screen relative">
+      <main className="hero-section mx-auto bg-[var(--tertiary-color)] flex justify-evenly items-center h-screen relative">
       <button onClick={handleLogout} className="group absolute z-10 top-5 left-[7%]  delay-500">
         <p className="transition-all ease-in-out text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] font-semibold">Return</p>
         <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] group-hover:translate-x-[-4px] text-[50px] "/>
       </button>
       <img className="absolute top-5 left-1/2 z-10 size-[80px]" src={Eagle} alt="" />
-      <section className="main-left max-w-[50%] ">
+
+      <section className="main-left max-w-[50%]">
         <h1 className="text-[8rem] text-[var(--primary-color)] px-2 ">Welcome to the Main Page!</h1>
         <p className="text-[2rem] py-6 px-2 text-[var(--primary-color)] ">Mini Catch Phrase here!</p>
         <div className="flex justify-start px-2 pb-6 items-center">
@@ -45,8 +48,9 @@ const MainPage = () => {
             Begin
           </button>
         </div>
+
       </section>
-      <section className="main-right bg-[url(images/rothenberg.jpg)] bg-cover bg-no-repeat lg:w-[600px] lg:h-full ">
+      <section className="main-right z-10 bg-[url(images/rothenberg.jpg)] bg-cover bg-no-repeat lg:w-[600px] lg:h-full ">
         <Canvas>
           <Suspense fallback={<SuspenseLoader/>}>
             <SphereSciFi  scale={1.5}/>
@@ -57,10 +61,15 @@ const MainPage = () => {
         </Canvas>
       </section>
       </main>
-      <main className="h-screen">
-        <div>
-          Main info here 2nd area after hero-section
-        </div>
+
+      <main className="h-screen relative mx-auto bg-[var(--tertiary-color)] flex justify-evenly items-center gap-5 lg:max-w-[1967px] ">
+        <img className="absolute  top-0 left-[6%] w-[700px] " src={Divider} alt="" />
+        <section className="lg:max-w-[983px]">
+          <p className="px-2 border-2 border-black w-[963px]">Test area</p>
+        </section>
+        <section className="lg:w-[600px] lg:h-full border-2 border-black">
+
+        </section>
       </main>
     </div>
   );
