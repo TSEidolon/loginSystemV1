@@ -64,8 +64,8 @@ const MainPage = () => {
 
       <main className="h-screen relative mx-auto bg-[var(--tertiary-color)] flex justify-evenly items-center gap-5 lg:max-w-[1967px] ">
         <img className="absolute  top-0 left-[6%] w-[700px] " src={Divider} alt="" />
-        <section className="lg:max-w-[983px]">
-          <p className="px-2 border-2 border-black w-[963px]">Test area</p>
+        <section className="lg:max-w-[983px] lg:max-h-[552px]">
+          <p className="px-2 border-2 border-black h-[500px] lg:w-[963px]">Test area</p>
         </section>
         <section className="lg:w-[600px] lg:h-full border-2 border-black">
 
