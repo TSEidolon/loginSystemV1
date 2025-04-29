@@ -31,7 +31,7 @@ const MainPage = () => {
 
   return (
     <div className=" ">
-      <main className="hero-section mx-auto bg-[var(--tertiary-color)] flex justify-evenly items-center h-screen relative">
+      <main className="hero-section  bg-[var(--tertiary-color)] flex justify-between items-center h-screen relative px-[7rem]">
       <button onClick={handleLogout} className="group absolute z-10 top-5 left-[7%]  delay-500">
         <p className="transition-all ease-in-out text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] font-semibold">Return</p>
         <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] group-hover:translate-x-[-4px] text-[50px] "/>
@@ -62,7 +62,7 @@ const MainPage = () => {
       </section>
       </main>
 
-      <main className="h-screen relative mx-auto bg-[var(--tertiary-color)] flex justify-evenly items-center gap-5 lg:max-w-[1967px] ">
+      <main className="h-screen relative  bg-[var(--tertiary-color)] flex justify-between items-center gap-5 px-[7rem] w-full">
         <img className="absolute  top-0 left-[6%] w-[700px] " src={Divider} alt="" />
         <section className="lg:max-w-[983px] lg:max-h-[552px]">
           <p className="px-2 border-2 border-black h-[500px] lg:w-[963px]">Test area</p>
