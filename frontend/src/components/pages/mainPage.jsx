@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useEffect, Suspense } from "react";
+import { useEffect, Suspense, useState } from "react";
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Environment } from '@react-three/drei'
 
@@ -11,8 +11,16 @@ import Divider from "../../assets/images/divider.png"
 
 
 const MainPage = () => {
-  const navigate = useNavigate();
+  const [arachnidInfo, setArachnidInfo] = useState(0)
 
+  const showInfo = (e) => {
+    setArachnidInfo(e)
+  }
+  function checkClick() {
+    console.log (arachnidInfo)
+  }
+
+  const navigate = useNavigate();
 
   // 1. Uncomment everything commented to check for tokens when logging in and remove them when logging out
 
@@ -23,16 +31,17 @@ const MainPage = () => {
   //   }
   // }, [navigate]);
 
-
   const handleLogout = () => {
     // localStorage.removeItem("token");
     navigate("/");
   };
 
+
+
   return (
     <div className=" ">
       <main className="hero-section  bg-[var(--tertiary-color)] flex justify-between items-center h-screen relative px-[7rem]">
-      <button onClick={handleLogout} className="group absolute z-10 top-5 left-[7%]  delay-500">
+      <button onClick={handleLogout} className="group absolute z-10 top-5 left-[6%]  delay-500">
         <p className="transition-all ease-in-out text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] font-semibold">Return</p>
         <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] group-hover:translate-x-[-4px] text-[50px] "/>
       </button>
@@ -64,8 +73,18 @@ const MainPage = () => {
 
       <main className="h-screen relative  bg-[var(--tertiary-color)] flex justify-between items-center gap-5 px-[7rem] w-full">
         <img className="absolute  top-0 left-[6%] w-[700px] " src={Divider} alt="" />
-        <section className="lg:max-w-[983px] lg:max-h-[552px]">
-          <p className="px-2 border-2 border-black h-[500px] lg:w-[963px]">Test area</p>
+        <section className="border-2 border-black w-[850px] h-[600px]">
+          <div className="button-area">
+            <button className="size-[100px] border-2 border-black " onClick={() => {showInfo(1); checkClick()}}>
+              <img src={Eagle} alt="" />
+            </button>
+          </div>
+          <div className="text-area">
+            <div className={("text-blue-500")+(arachnidInfo===1 ? " flex": " hidden")}>
+              <h2>Test One</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam voluptatibus voluptates doloribus quam, alias est aliquid saepe possimus iure exercitationem inventore enim officia nesciunt ipsa vero porro repudiandae reprehenderit accusantium modi impedit. Sed, asperiores esse nulla veniam possimus cupiditate voluptatem nesciunt hic dolor ullam facere sint laudantium cumque. Dolorem, fugit consequuntur, molestias voluptatem enim maxime ratione neque optio magnam consequatur fuga cum deleniti ab id officia unde ipsum sapiente. Tenetur necessitatibus minus laudantium eum inventore maxime enim ab adipisci.</p>
+            </div>
+          </div>
         </section>
         <section className="lg:w-[600px] lg:h-full border-2 border-black">
 

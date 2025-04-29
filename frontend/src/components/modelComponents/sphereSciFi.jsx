@@ -14,7 +14,7 @@ export function SphereSciFi(props) {
   const { nodes, materials, animations } = useGLTF('/models/sphereSciFi.glb')
   const { actions, names } = useAnimations(animations, group)
 
-  console.log(actions, names)
+
   useEffect(() => {
     actions[names[0]].reset().setEffectiveTimeScale(.5).play()
   })
