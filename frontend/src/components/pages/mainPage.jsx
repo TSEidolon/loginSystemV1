@@ -6,6 +6,7 @@ import { OrbitControls, Environment } from '@react-three/drei'
 import { SphereSciFi } from "../modelComponents/sphereSciFi";
 import SuspenseLoader from "../features/suspenseLoader";
 import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
+import { FaBook } from "react-icons/fa6";
 import Eagle from "../../assets/images/eagle.png"
 import Divider from "../../assets/images/divider.png"
 
@@ -59,7 +60,7 @@ const MainPage = () => {
         </div>
 
       </section>
-      <section className="main-right z-10 bg-[url(images/rothenberg.jpg)] bg-cover bg-no-repeat lg:w-[600px] lg:h-full ">
+      <section className="main-right z-10 bg-[url(images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat lg:w-[600px] lg:h-full ">
         <Canvas>
           <Suspense fallback={<SuspenseLoader/>}>
             <SphereSciFi  scale={1.5}/>
@@ -73,10 +74,10 @@ const MainPage = () => {
 
       <main className="h-screen relative  bg-[var(--tertiary-color)] flex justify-between items-center gap-5 px-[7rem] w-full">
         <img className="absolute  top-0 left-[6%] w-[700px] " src={Divider} alt="" />
-        <section className="border-2 border-black w-[850px] h-[600px]">
-          <div className="button-area">
-            <button className="size-[100px] border-2 border-black " onClick={() => {showInfo(1); checkClick()}}>
-              <img src={Eagle} alt="" />
+        <section className="border-2 border-black w-[850px] h-[600px] relative">
+          <div className="button-area absolute z-10 -right-11 top-4 ">
+            <button className="h-[60px] w-[90px] rounded-md border-2 border-black bg-blue-400 " onClick={() => {showInfo(1); checkClick()}}>
+              <FaBook className="size-full p-2"/>
             </button>
           </div>
           <div className="text-area">
@@ -86,7 +87,7 @@ const MainPage = () => {
             </div>
           </div>
         </section>
-        <section className="lg:w-[600px] lg:h-full border-2 border-black">
+        <section className="lg:w-[600px] lg:h-full  bg-[url(images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat">
 
         </section>
       </main>
