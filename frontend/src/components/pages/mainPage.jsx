@@ -5,8 +5,10 @@ import { OrbitControls, Environment } from '@react-three/drei'
 
 import { SphereSciFi } from "../modelComponents/sphereSciFi";
 import SuspenseLoader from "../features/suspenseLoader";
-import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
+import { MdOutlineKeyboardDoubleArrowLeft, MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { FaBook } from "react-icons/fa6";
+import { GiPistolGun } from "react-icons/gi";
+import { IoIosStats } from "react-icons/io";
 import Eagle from "../../assets/images/eagle.png"
 import Divider from "../../assets/images/divider.png"
 
@@ -74,31 +76,35 @@ const MainPage = () => {
 
       <main className="h-screen relative  bg-[var(--tertiary-color)] flex justify-between items-center gap-5 px-[7rem] w-full">
         <img className="absolute  top-0 left-[6%] w-[700px] " src={Divider} alt="" />
-        <section className="border-2 border-black w-[850px] h-[600px] relative">
+        <section className=" w-[850px] h-[600px] relative flex flex-col border-2 border-black shadow-sm shadow-black rounded-md">
           <div className="button-area absolute z-10 -right-11 top-4 flex flex-col gap-5">
             <button className="h-[60px] w-[90px] rounded-md border-2 border-black bg-blue-400 " onClick={() => {showInfo(1); checkClick()}}>
-              <FaBook className="size-full p-2"/>
+              <IoIosStats className="size-full p-2"/>
             </button>
             <button className="h-[60px] w-[90px] rounded-md border-2 border-black bg-blue-400 " onClick={() => {showInfo(2); checkClick()}}>
-              <FaBook className="size-full p-2"/>
+              <GiPistolGun className="size-full p-2"/>
             </button>
             <button className="h-[60px] w-[90px] rounded-md border-2 border-black bg-blue-400 " onClick={() => {showInfo(3); checkClick()}}>
               <FaBook className="size-full p-2"/>
             </button>
           </div>
-          <div className="text-area">
-            <div className={("text-blue-500")+(arachnidInfo===1 ? " flex": " hidden")}>
+          <div className="text-area font-semibold h-[85%] text-[var(--primary-color)]">
+            <div className={(" flex-col pl-5 pr-[4rem]")+(arachnidInfo===1 ? " flex": " hidden")}>
               <h2>Test One</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam voluptatibus voluptates doloribus quam, alias est aliquid saepe possimus iure exercitationem inventore enim officia nesciunt ipsa vero porro repudiandae reprehenderit accusantium modi impedit. Sed, asperiores esse nulla veniam possimus cupiditate voluptatem nesciunt hic dolor ullam facere sint laudantium cumque. Dolorem, fugit consequuntur, molestias voluptatem enim maxime ratione neque optio magnam consequatur fuga cum deleniti ab id officia unde ipsum sapiente. Tenetur necessitatibus minus laudantium eum inventore maxime enim ab adipisci.</p>
             </div>
-            <div className={("text-green-500")+(arachnidInfo===2 ? " flex": " hidden")}>
+            <div className={("")+(arachnidInfo===2 ? " flex": " hidden")}>
               <h2>Test One</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam voluptatibus voluptates doloribus quam, alias est aliquid saepe possimus iure exercitationem inventore enim officia nesciunt ipsa vero porro repudiandae reprehenderit accusantium modi impedit. Sed, asperiores esse nulla veniam possimus cupiditate voluptatem nesciunt hic dolor ullam facere sint laudantium cumque. Dolorem, fugit consequuntur, molestias voluptatem enim maxime ratione neque optio magnam consequatur fuga cum deleniti ab id officia unde ipsum sapiente. Tenetur necessitatibus minus laudantium eum inventore maxime enim ab adipisci.</p>
             </div>
-            <div className={("text-red-500")+(arachnidInfo===3 ? " flex": " hidden")}>
+            <div className={("")+(arachnidInfo===3 ? " flex": " hidden")}>
               <h2>Test One</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam voluptatibus voluptates doloribus quam, alias est aliquid saepe possimus iure exercitationem inventore enim officia nesciunt ipsa vero porro repudiandae reprehenderit accusantium modi impedit. Sed, asperiores esse nulla veniam possimus cupiditate voluptatem nesciunt hic dolor ullam facere sint laudantium cumque. Dolorem, fugit consequuntur, molestias voluptatem enim maxime ratione neque optio magnam consequatur fuga cum deleniti ab id officia unde ipsum sapiente. Tenetur necessitatibus minus laudantium eum inventore maxime enim ab adipisci.</p>
             </div>
+          </div>
+          <div className="arrow-area h-[15%] w-full flex justify-evenly items-center  border-t-2 ">
+            <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] hover:text-[var(--secondary-color)] hover:translate-x-[-4px] text-[90px] "/>
+            <MdOutlineKeyboardDoubleArrowRight className="transition-all ease-in-out  text-[var(--primary-color)] hover:text-[var(--secondary-color)] hover:translate-x-[4px] text-[90px] "/>
           </div>
         </section>
         <section className="lg:w-[600px] lg:h-full  bg-[url(images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat">
