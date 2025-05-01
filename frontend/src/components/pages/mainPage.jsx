@@ -5,6 +5,7 @@ import { OrbitControls, Environment } from '@react-three/drei'
 
 import { SphereSciFi } from "../modelComponents/sphereSciFi";
 import SuspenseLoader from "../features/suspenseLoader";
+import { WarriorModel } from "../modelComponents/warriorModel";
 import { MdOutlineKeyboardDoubleArrowLeft, MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { FaBook } from "react-icons/fa6";
 import { GiPistolGun } from "react-icons/gi";
@@ -62,7 +63,7 @@ const MainPage = () => {
         </div>
 
       </section>
-      <section className="main-right z-10 bg-[url(images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat lg:w-[600px] lg:h-full ">
+      <section className="main-right z-10 bg-[url(images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat lg:w-[700px] lg:h-full ">
         <Canvas>
           <Suspense fallback={<SuspenseLoader/>}>
             <SphereSciFi  scale={1.5}/>
@@ -107,8 +108,16 @@ const MainPage = () => {
             <MdOutlineKeyboardDoubleArrowRight className="transition-all ease-in-out  text-[var(--primary-color)] hover:text-[var(--secondary-color)] hover:translate-x-[4px] text-[90px] "/>
           </div>
         </section>
-        <section className="lg:w-[600px] lg:h-full  bg-[url(images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat">
-
+        <section className="lg:w-[700px] lg:h-full  bg-[url(images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat">
+          <Canvas>
+            <Suspense fallback={<SuspenseLoader/>}>
+              <OrbitControls/>
+              <WarriorModel  scale={.9} position={[-.4,-1,0]} rotation={[.3,-1.1,0]}/>
+              <Environment preset="forest" />
+              <ambientLight intensity={1} color="white"/>
+              <directionalLight position={[-10, 300, 0]} intensity={1} color="white"/>
+            </Suspense>
+          </Canvas>
         </section>
       </main>
     </div>
