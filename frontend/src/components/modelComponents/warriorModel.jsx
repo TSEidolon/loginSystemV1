@@ -9,16 +9,18 @@ Title: Starship Troopers: Arachnid Warrior
 import { useRef, useEffect } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
-export function WarriorModel(props) {
+export function WarriorModel({...props}) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/models/warrior.glb')
-  const { actions } = useAnimations(animations, group)
+  const { actions, names } = useAnimations(animations, group)
 
-  // console.log(actions.Attack)
+  
+  console.log(names)
   useEffect(() => {
     actions.Idle.reset().setEffectiveTimeScale(.7).play()
   })
 
+  
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">
