@@ -112,7 +112,7 @@ const MainPage = () => {
           <Canvas>
             <Suspense fallback={<SuspenseLoader/>}>
               <OrbitControls/>
-              <WarriorModel  scale={.9} position={[-.4,-1,0]} rotation={[.3,-1.1,0]}/>
+              <WarriorModel  scale={.8} position={[0,-1,0]} rotation={[.3,-1.1,0]}/>
               <Environment preset="forest" />
               <ambientLight intensity={1} color="white"/>
               <directionalLight position={[-10, 300, 0]} intensity={1} color="white"/>
