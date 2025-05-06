@@ -15,7 +15,8 @@ import Divider from "../../assets/images/divider.png"
 
 
 const MainPage = () => {
-  const [arachnidInfo, setArachnidInfo] = useState(1)
+  const [arachnidInfo, setArachnidInfo] = useState(0)
+  const [animationNumber, setAnimationNumber] = useState([0])
 
   const showInfo = (e) => {
     setArachnidInfo(e)
@@ -79,26 +80,26 @@ const MainPage = () => {
         <img className="absolute  top-0 left-[6%] w-[700px] " src={Divider} alt="" />
         <section className=" w-[850px] h-[600px] relative flex flex-col border-2 border-black  rounded-md">
           <div className="button-area absolute z-10 -right-11 top-4 flex flex-col gap-5">
-            <button className="h-[60px] w-[90px] rounded-md bg-[var(--tertiary-color)] border-2 border-black shadow-sm shadow-black" onClick={() => {showInfo(1); checkClick()}}>
+            <button className="h-[60px] w-[90px] rounded-md bg-[var(--tertiary-color)] border-2 border-black shadow-sm shadow-black" onClick={() => {showInfo(0); checkClick(),setAnimationNumber(0)}}>
               <IoIosStats className=" size-full p-2"/>
             </button>
-            <button className="h-[60px] w-[90px] rounded-md bg-[var(--tertiary-color)] border-2 border-black shadow-sm shadow-black" onClick={() => {showInfo(2); checkClick()}}>
+            <button className="h-[60px] w-[90px] rounded-md bg-[var(--tertiary-color)] border-2 border-black shadow-sm shadow-black" onClick={() => {showInfo(1); checkClick(),setAnimationNumber(1)}}>
               <GiPistolGun className=" size-full p-2"/>
             </button>
-            <button className="h-[60px] w-[90px] rounded-md bg-[var(--tertiary-color)] border-2 border-black shadow-sm shadow-black" onClick={() => {showInfo(3); checkClick()}}>
+            <button className="h-[60px] w-[90px] rounded-md bg-[var(--tertiary-color)] border-2 border-black shadow-sm shadow-black" onClick={() => {showInfo(2); checkClick(),setAnimationNumber(2)}}>
               <FaBook className=" size-full p-2"/>
             </button>
           </div>
           <div className="text-area font-semibold h-[85%] text-[var(--primary-color)]">
-            <div className={(" flex-col pl-5 pr-[4rem]")+(arachnidInfo===1 ? " flex": " hidden")}>
+            <div className={(" flex-col pl-5 pr-[4rem]")+(arachnidInfo===0 ? " flex": " hidden")}>
+              <h2>Test One</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam voluptatibus voluptates doloribus quam, alias est aliquid saepe possimus iure exercitationem inventore enim officia nesciunt ipsa vero porro repudiandae reprehenderit accusantium modi impedit. Sed, asperiores esse nulla veniam possimus cupiditate voluptatem nesciunt hic dolor ullam facere sint laudantium cumque. Dolorem, fugit consequuntur, molestias voluptatem enim maxime ratione neque optio magnam consequatur fuga cum deleniti ab id officia unde ipsum sapiente. Tenetur necessitatibus minus laudantium eum inventore maxime enim ab adipisci.</p>
+            </div>
+            <div className={("")+(arachnidInfo===1 ? " flex": " hidden")}>
               <h2>Test One</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam voluptatibus voluptates doloribus quam, alias est aliquid saepe possimus iure exercitationem inventore enim officia nesciunt ipsa vero porro repudiandae reprehenderit accusantium modi impedit. Sed, asperiores esse nulla veniam possimus cupiditate voluptatem nesciunt hic dolor ullam facere sint laudantium cumque. Dolorem, fugit consequuntur, molestias voluptatem enim maxime ratione neque optio magnam consequatur fuga cum deleniti ab id officia unde ipsum sapiente. Tenetur necessitatibus minus laudantium eum inventore maxime enim ab adipisci.</p>
             </div>
             <div className={("")+(arachnidInfo===2 ? " flex": " hidden")}>
-              <h2>Test One</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam voluptatibus voluptates doloribus quam, alias est aliquid saepe possimus iure exercitationem inventore enim officia nesciunt ipsa vero porro repudiandae reprehenderit accusantium modi impedit. Sed, asperiores esse nulla veniam possimus cupiditate voluptatem nesciunt hic dolor ullam facere sint laudantium cumque. Dolorem, fugit consequuntur, molestias voluptatem enim maxime ratione neque optio magnam consequatur fuga cum deleniti ab id officia unde ipsum sapiente. Tenetur necessitatibus minus laudantium eum inventore maxime enim ab adipisci.</p>
-            </div>
-            <div className={("")+(arachnidInfo===3 ? " flex": " hidden")}>
               <h2>Test One</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam voluptatibus voluptates doloribus quam, alias est aliquid saepe possimus iure exercitationem inventore enim officia nesciunt ipsa vero porro repudiandae reprehenderit accusantium modi impedit. Sed, asperiores esse nulla veniam possimus cupiditate voluptatem nesciunt hic dolor ullam facere sint laudantium cumque. Dolorem, fugit consequuntur, molestias voluptatem enim maxime ratione neque optio magnam consequatur fuga cum deleniti ab id officia unde ipsum sapiente. Tenetur necessitatibus minus laudantium eum inventore maxime enim ab adipisci.</p>
             </div>
@@ -112,7 +113,7 @@ const MainPage = () => {
           <Canvas>
             <Suspense fallback={<SuspenseLoader/>}>
               <OrbitControls/>
-              <WarriorModel  scale={.8} position={[0,-1,0]} rotation={[.3,-1.1,0]}/>
+              <WarriorModel  scale={.8} position={[0,-1,0]} rotation={[.3,-1.1,0]} animationNumber={animationNumber}/>
               <Environment preset="forest" />
               <ambientLight intensity={1} color="white"/>
               <directionalLight position={[-10, 300, 0]} intensity={1} color="white"/>
