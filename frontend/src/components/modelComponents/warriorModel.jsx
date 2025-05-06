@@ -17,8 +17,8 @@ export function WarriorModel({...props}) {
   
   console.log(names)
   useEffect(() => {
-    actions.Idle.reset().setEffectiveTimeScale(.7).play()
-  })
+    actions[names[0]].reset().setEffectiveTimeScale(.7).play()
+  },[])
 
   
   return (
