@@ -6,6 +6,7 @@ import { OrbitControls, Environment, CameraControls } from '@react-three/drei'
 import { SphereSciFi } from "../modelComponents/sphereSciFi";
 import SuspenseLoader from "../features/suspenseLoader";
 import { WarriorModel } from "../modelComponents/warriorModel";
+import { HopperModel } from "../modelComponents/hopperModel";
 import { MdOutlineKeyboardDoubleArrowLeft, MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { FaBook } from "react-icons/fa6";
 import { GiPistolGun } from "react-icons/gi";
@@ -120,7 +121,7 @@ const MainPage = () => {
             </div>
           </div>
           <div className="arrow-area h-[15%] w-full flex justify-evenly items-center  border-t-2 ">
-            <button onClick={() => setFocusTarget([5, 1, 0])}>
+            <button onClick={() => setFocusTarget([12, 0, 0])}>
               <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] hover:text-[var(--secondary-color)] hover:translate-x-[-4px] text-[90px] "/>
             </button>
             <button onClick={() => setFocusTarget([0, 0, 0])}>
@@ -134,6 +135,7 @@ const MainPage = () => {
               <OrbitControls/>
               <CameraController target={focusTarget} />
               <WarriorModel  scale={1.1} position={[0,-1,0]} rotation={[.2,-.8,0]} animationNumber={animationNumber}/>
+              <HopperModel scale={1.1} position={[12, -1, 0]} rotation={[.2,-.8,0]}/>
               <Environment preset="forest" />
               <ambientLight intensity={1} color="white"/>
               <directionalLight position={[-10, 300, 0]} intensity={1} color="white"/>
