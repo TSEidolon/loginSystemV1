@@ -121,10 +121,10 @@ const MainPage = () => {
             </div>
           </div>
           <div className="arrow-area h-[15%] w-full flex justify-evenly items-center  border-t-2 ">
-            <button onClick={() => setFocusTarget([12, 0, 0])}>
+            <button onClick={() => setFocusTarget([0, 0, 0])}>
               <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] hover:text-[var(--secondary-color)] hover:translate-x-[-4px] text-[90px] "/>
             </button>
-            <button onClick={() => setFocusTarget([0, 0, 0])}>
+            <button onClick={() => setFocusTarget([12, 0, 0])}>
               <MdOutlineKeyboardDoubleArrowRight className="transition-all ease-in-out  text-[var(--primary-color)] hover:text-[var(--secondary-color)] hover:translate-x-[4px] text-[90px] "/>
             </button>
           </div>
@@ -138,7 +138,9 @@ const MainPage = () => {
               <HopperModel scale={1.1} position={[12, -1, 0]} rotation={[.2,-.8,0]}/>
               <Environment preset="forest" />
               <ambientLight intensity={1} color="white"/>
-              <directionalLight position={[-10, 300, 0]} intensity={1} color="white"/>
+              <directionalLight position={[-10, 0, 0]} intensity={1} color="white"/>
+              <directionalLight position={[10, 0, 0]} intensity={1} color="white"/>
+              <directionalLight position={[0, 0, -10]} intensity={1} color="white"/>
             </Suspense>
           </Canvas>
         </section>
