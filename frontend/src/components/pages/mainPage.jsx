@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { useEffect, Suspense, useState } from "react";
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Environment } from '@react-three/drei'
+import { useEffect, Suspense, useState, useRef } from "react";
+import { Canvas, useFrame } from '@react-three/fiber'
+import { OrbitControls, Environment, CameraControls } from '@react-three/drei'
 
 import { SphereSciFi } from "../modelComponents/sphereSciFi";
 import SuspenseLoader from "../features/suspenseLoader";
@@ -13,10 +13,27 @@ import { IoIosStats } from "react-icons/io";
 import Eagle from "../../assets/images/eagle.png"
 import Divider from "../../assets/images/divider.png"
 
+const CameraController = ({target}) => {
+  const controlsRef = useRef()
+
+
+  useEffect(() => {
+    if (controlsRef.current && target) {
+      controlsRef.current.setLookAt(
+        target[0] + 3, target[1] + 2, target[2] + 5,
+        target[0], target[1], target[2],
+        true
+      )
+    }
+  }, [target])
+
+  return <CameraControls ref={controlsRef} />
+}
 
 const MainPage = () => {
   const [arachnidInfo, setArachnidInfo] = useState(0)
   const [animationNumber, setAnimationNumber] = useState([0])
+  const [focusTarget, setFocusTarget] = useState([0, 0, 0])
 
   const showInfo = (e) => {
     setArachnidInfo(e)
@@ -40,8 +57,6 @@ const MainPage = () => {
     // localStorage.removeItem("token");
     navigate("/");
   };
-
-
 
   return (
     <div className=" ">
@@ -105,15 +120,20 @@ const MainPage = () => {
             </div>
           </div>
           <div className="arrow-area h-[15%] w-full flex justify-evenly items-center  border-t-2 ">
-            <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] hover:text-[var(--secondary-color)] hover:translate-x-[-4px] text-[90px] "/>
-            <MdOutlineKeyboardDoubleArrowRight className="transition-all ease-in-out  text-[var(--primary-color)] hover:text-[var(--secondary-color)] hover:translate-x-[4px] text-[90px] "/>
+            <button onClick={() => setFocusTarget([5, 1, 0])}>
+              <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] hover:text-[var(--secondary-color)] hover:translate-x-[-4px] text-[90px] "/>
+            </button>
+            <button onClick={() => setFocusTarget([0, 0, 0])}>
+              <MdOutlineKeyboardDoubleArrowRight className="transition-all ease-in-out  text-[var(--primary-color)] hover:text-[var(--secondary-color)] hover:translate-x-[4px] text-[90px] "/>
+            </button>
           </div>
         </section>
         <section className="lg:w-[700px] lg:h-full  bg-[url(images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat">
-          <Canvas>
+          <Canvas >
             <Suspense fallback={<SuspenseLoader/>}>
               <OrbitControls/>
-              <WarriorModel  scale={.8} position={[0,-1,0]} rotation={[.3,-1.1,0]} animationNumber={animationNumber}/>
+              <CameraController target={focusTarget} />
+              <WarriorModel  scale={1.1} position={[0,-1,0]} rotation={[.2,-.8,0]} animationNumber={animationNumber}/>
               <Environment preset="forest" />
               <ambientLight intensity={1} color="white"/>
               <directionalLight position={[-10, 300, 0]} intensity={1} color="white"/>
