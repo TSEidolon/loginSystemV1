@@ -34,13 +34,24 @@ const CameraController = ({target}) => {
 const MainPage = () => {
   const [arachnidInfo, setArachnidInfo] = useState(0)
   const [animationNumber, setAnimationNumber] = useState([0])
+  
   const [focusTarget, setFocusTarget] = useState([0, 0, 0])
 
   const showInfo = (e) => {
     setArachnidInfo(e)
   }
+
   function checkClick() {
-    console.log (arachnidInfo)
+    console.log (warriorTarget)
+  }
+
+
+
+  const warriorToggle = () => {
+    const [warriorTarget, SetWarriorTarget] = useState(true)
+      useEffect (() => {
+
+  }, [warriorTarget])
   }
 
   const navigate = useNavigate();
@@ -96,13 +107,13 @@ const MainPage = () => {
         <img className="absolute  top-0 left-[6%] w-[700px] " src={Divider} alt="" />
         <section className=" w-[850px] h-[600px] relative flex flex-col border-2 border-black  rounded-md">
           <div className="button-area absolute z-10 -right-11 top-4 flex flex-col gap-5">
-            <button className={("h-[60px] w-[90px] rounded-md  hover:scale-110 border-2 border-black shadow-sm shadow-black ") +  (arachnidInfo===0 ? " bg-[var(--primary-color)] text-[var(--tertiary-color)] ": "  bg-[var(--tertiary-color)] ")} onClick={() => {showInfo(0); checkClick(),setAnimationNumber(0)}}>
+            <button className={("h-[60px] w-[90px] rounded-md  hover:scale-110 border-2 border-black shadow-sm shadow-black ") +  (arachnidInfo===0 ? " bg-[var(--primary-color)] text-[var(--tertiary-color)] ": "  bg-[var(--tertiary-color)] ")} onClick={() => {showInfo(0), checkClick(),setAnimationNumber(0)}}>
               <IoIosStats className=" size-full p-2 "/>
             </button>
-            <button className={("h-[60px] w-[90px] rounded-md  hover:scale-110 border-2 border-black shadow-sm shadow-black ") +  (arachnidInfo===1 ? " bg-[var(--primary-color)] text-[var(--tertiary-color)] ": "  bg-[var(--tertiary-color)] ")} onClick={() => {showInfo(1); checkClick(),setAnimationNumber(1)}}>
+            <button className={("h-[60px] w-[90px] rounded-md  hover:scale-110 border-2 border-black shadow-sm shadow-black ") +  (arachnidInfo===1 ? " bg-[var(--primary-color)] text-[var(--tertiary-color)] ": "  bg-[var(--tertiary-color)] ")} onClick={() => {showInfo(1), checkClick(),setAnimationNumber(1)}}>
               <GiPistolGun className=" size-full p-2"/>
             </button>
-            <button className={("h-[60px] w-[90px] rounded-md  hover:scale-110 border-2 border-black shadow-sm shadow-black ") +  (arachnidInfo===2 ? " bg-[var(--primary-color)] text-[var(--tertiary-color)] ": "  bg-[var(--tertiary-color)] ")} onClick={() => {showInfo(2); checkClick(),setAnimationNumber(2)}}>
+            <button className={("h-[60px] w-[90px] rounded-md  hover:scale-110 border-2 border-black shadow-sm shadow-black ") +  (arachnidInfo===2 ? " bg-[var(--primary-color)] text-[var(--tertiary-color)] ": "  bg-[var(--tertiary-color)] ")} onClick={() => {showInfo(2), checkClick(),setAnimationNumber(2)}}>
               <FaBook className=" size-full p-2 "/>
             </button>
           </div>
@@ -121,10 +132,10 @@ const MainPage = () => {
             </div>
           </div>
           <div className="arrow-area h-[15%] w-full flex justify-evenly items-center  border-t-2 ">
-            <button onClick={() => setFocusTarget([0, 0, 0])}>
+            <button onClick={() => {setFocusTarget([0, 0, 0]), checkClick()}}>
               <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] hover:text-[var(--secondary-color)] hover:translate-x-[-4px] text-[90px] "/>
             </button>
-            <button onClick={() => setFocusTarget([12, 0, 0])}>
+            <button onClick={() => {setFocusTarget([12, 0, 0]), checkClick() }}>
               <MdOutlineKeyboardDoubleArrowRight className="transition-all ease-in-out  text-[var(--primary-color)] hover:text-[var(--secondary-color)] hover:translate-x-[4px] text-[90px] "/>
             </button>
           </div>

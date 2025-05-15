@@ -16,7 +16,7 @@ export function HopperModel({animationNumber = 0,...props}) {
 
   const animationName = names[animationNumber]
 
-  console.log(names)
+
   useEffect(() => {
     const action = actions[animationName];
     if (!action) return;
