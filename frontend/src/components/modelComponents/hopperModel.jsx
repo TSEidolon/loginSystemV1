@@ -6,13 +6,27 @@ Source: https://sketchfab.com/3d-models/starship-troopers-arachnid-hopper-2429bf
 Title: Starship Troopers: Arachnid Hopper
 */
 
-import React, { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
-export function HopperModel(props) {
+export function HopperModel({animationNumber = 0,...props}) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/models/hopper.glb')
-  const { actions } = useAnimations(animations, group)
+  const { actions, names } = useAnimations(animations, group)
+
+  const animationName = names[animationNumber]
+
+  console.log(names)
+  useEffect(() => {
+    const action = actions[animationName];
+    if (!action) return;
+  
+    action.reset().setEffectiveTimeScale(0.8).fadeIn(0.5).play();
+  
+    return () => action.fadeOut(0.5);
+  }, [animationName]);
+
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">
