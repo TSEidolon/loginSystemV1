@@ -142,7 +142,7 @@ const checkClick = (target) => {
             <button onClick={() => { setFocusTarget([0, 0, 0]), SetWarriorTarget(true), checkClick(true)}}>
               <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] hover:text-[var(--secondary-color)] hover:translate-x-[-4px] text-[90px] "/>
             </button>
-            <button onClick={() => {setFocusTarget([12, 0, 0]), SetWarriorTarget(false), checkClick(false) }}>
+            <button onClick={() => {setFocusTarget([14, 0, 0]), SetWarriorTarget(false), checkClick(false) }}>
               <MdOutlineKeyboardDoubleArrowRight className="transition-all ease-in-out  text-[var(--primary-color)] hover:text-[var(--secondary-color)] hover:translate-x-[4px] text-[90px] "/>
             </button>
           </div>
@@ -153,7 +153,7 @@ const checkClick = (target) => {
               <OrbitControls/>
               <CameraController target={focusTarget} />
               <WarriorModel  scale={1.1} position={[0,-1,0]} rotation={[.2,-.8,0]} animationNumber={animationNumber}/>
-              <HopperModel scale={1.1} position={[12, -1, 0]} rotation={[.2,-.8,0]} animationNumber={animationNumber}/>
+              <HopperModel scale={1} position={[14, -1, 0]} rotation={[.2,-.8,0]} animationNumber={animationNumber}/>
               <Environment preset="forest" />
               <ambientLight intensity={1} color="white"/>
               <directionalLight position={[-10, 0, 0]} intensity={1} color="white"/>

@@ -21,7 +21,7 @@ export function HopperModel({animationNumber = 0,...props}) {
     const action = actions[animationName];
     if (!action) return;
   
-    action.reset().setEffectiveTimeScale(0.8).fadeIn(0.5).play();
+    action.reset().setEffectiveTimeScale(1.5).fadeIn(0.5).play();
   
     return () => action.fadeOut(0.5);
   }, [animationName]);
