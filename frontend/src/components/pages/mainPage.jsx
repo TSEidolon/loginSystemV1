@@ -34,25 +34,17 @@ const CameraController = ({target}) => {
 const MainPage = () => {
   const [arachnidInfo, setArachnidInfo] = useState(0)
   const [animationNumber, setAnimationNumber] = useState([0])
-  
+  const [warriorTarget, SetWarriorTarget] = useState(true)
   const [focusTarget, setFocusTarget] = useState([0, 0, 0])
 
   const showInfo = (e) => {
     setArachnidInfo(e)
   }
 
-  function checkClick() {
-    console.log (warriorTarget)
-  }
+const checkClick = (target) => {
+  console.log("New warriorTarget:", target);
+};
 
-
-
-  const warriorToggle = () => {
-    const [warriorTarget, SetWarriorTarget] = useState(true)
-      useEffect (() => {
-
-  }, [warriorTarget])
-  }
 
   const navigate = useNavigate();
 
@@ -118,24 +110,39 @@ const MainPage = () => {
             </button>
           </div>
           <div className="text-area font-semibold h-[85%] text-[var(--primary-color)]">
-            <div className={(" flex-col pl-5 pr-[4rem]")+(arachnidInfo===0 ? " flex": " hidden")}>
+            <div className={(" flex-col pl-5 pr-[4rem]")+(arachnidInfo ===0 && warriorTarget == true ? " flex": " hidden")}>
               <h2>Test One</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam voluptatibus voluptates doloribus quam, alias est aliquid saepe possimus iure exercitationem inventore enim officia nesciunt ipsa vero porro repudiandae reprehenderit accusantium modi impedit. Sed, asperiores esse nulla veniam possimus cupiditate voluptatem nesciunt hic dolor ullam facere sint laudantium cumque. Dolorem, fugit consequuntur, molestias voluptatem enim maxime ratione neque optio magnam consequatur fuga cum deleniti ab id officia unde ipsum sapiente. Tenetur necessitatibus minus laudantium eum inventore maxime enim ab adipisci.</p>
             </div>
-            <div className={("text-blue-400")+(arachnidInfo===1 ? " flex": " hidden")}>
+            <div className={("text-blue-400")+(arachnidInfo===1 && warriorTarget == true ? " flex": " hidden")}>
               <h2>Test One</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam voluptatibus voluptates doloribus quam, alias est aliquid saepe possimus iure exercitationem inventore enim officia nesciunt ipsa vero porro repudiandae reprehenderit accusantium modi impedit. Sed, asperiores esse nulla veniam possimus cupiditate voluptatem nesciunt hic dolor ullam facere sint laudantium cumque. Dolorem, fugit consequuntur, molestias voluptatem enim maxime ratione neque optio magnam consequatur fuga cum deleniti ab id officia unde ipsum sapiente. Tenetur necessitatibus minus laudantium eum inventore maxime enim ab adipisci.</p>
             </div>
-            <div className={("text-green-400 ")+(arachnidInfo===2 ? " flex": " hidden")}>
+            <div className={("text-green-400 ")+(arachnidInfo===2 && warriorTarget == true ? " flex": " hidden")}>
+              <h2>Test One</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam voluptatibus voluptates doloribus quam, alias est aliquid saepe possimus iure exercitationem inventore enim officia nesciunt ipsa vero porro repudiandae reprehenderit accusantium modi impedit. Sed, asperiores esse nulla veniam possimus cupiditate voluptatem nesciunt hic dolor ullam facere sint laudantium cumque. Dolorem, fugit consequuntur, molestias voluptatem enim maxime ratione neque optio magnam consequatur fuga cum deleniti ab id officia unde ipsum sapiente. Tenetur necessitatibus minus laudantium eum inventore maxime enim ab adipisci.</p>
+            </div>
+
+            {/* The Great Barrier  */}
+
+            <div className={(" flex-col pl-5 pr-[4rem]")+(arachnidInfo ===0 && warriorTarget == false ? " flex": " hidden")}>
+              <h2>Test One</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam voluptatibus voluptates doloribus quam, alias est aliquid saepe possimus iure exercitationem inventore enim officia nesciunt ipsa vero porro repudiandae reprehenderit accusantium modi impedit. Sed, asperiores esse nulla veniam possimus cupiditate voluptatem nesciunt hic dolor ullam facere sint laudantium cumque. Dolorem, fugit consequuntur, molestias voluptatem enim maxime ratione neque optio magnam consequatur fuga cum deleniti ab id officia unde ipsum sapiente. Tenetur necessitatibus minus laudantium eum inventore maxime enim ab adipisci.</p>
+            </div>
+            <div className={("text-red-400")+(arachnidInfo===1 && warriorTarget == false ? " flex": " hidden")}>
+              <h2>Test One</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam voluptatibus voluptates doloribus quam, alias est aliquid saepe possimus iure exercitationem inventore enim officia nesciunt ipsa vero porro repudiandae reprehenderit accusantium modi impedit. Sed, asperiores esse nulla veniam possimus cupiditate voluptatem nesciunt hic dolor ullam facere sint laudantium cumque. Dolorem, fugit consequuntur, molestias voluptatem enim maxime ratione neque optio magnam consequatur fuga cum deleniti ab id officia unde ipsum sapiente. Tenetur necessitatibus minus laudantium eum inventore maxime enim ab adipisci.</p>
+            </div>
+            <div className={("text-purple-400 ")+(arachnidInfo===2 && warriorTarget == false ? " flex": " hidden")}>
               <h2>Test One</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam voluptatibus voluptates doloribus quam, alias est aliquid saepe possimus iure exercitationem inventore enim officia nesciunt ipsa vero porro repudiandae reprehenderit accusantium modi impedit. Sed, asperiores esse nulla veniam possimus cupiditate voluptatem nesciunt hic dolor ullam facere sint laudantium cumque. Dolorem, fugit consequuntur, molestias voluptatem enim maxime ratione neque optio magnam consequatur fuga cum deleniti ab id officia unde ipsum sapiente. Tenetur necessitatibus minus laudantium eum inventore maxime enim ab adipisci.</p>
             </div>
           </div>
           <div className="arrow-area h-[15%] w-full flex justify-evenly items-center  border-t-2 ">
-            <button onClick={() => {setFocusTarget([0, 0, 0]), checkClick()}}>
+            <button onClick={() => { setFocusTarget([0, 0, 0]), SetWarriorTarget(true), checkClick(true)}}>
               <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] hover:text-[var(--secondary-color)] hover:translate-x-[-4px] text-[90px] "/>
             </button>
-            <button onClick={() => {setFocusTarget([12, 0, 0]), checkClick() }}>
+            <button onClick={() => {setFocusTarget([12, 0, 0]), SetWarriorTarget(false), checkClick(false) }}>
               <MdOutlineKeyboardDoubleArrowRight className="transition-all ease-in-out  text-[var(--primary-color)] hover:text-[var(--secondary-color)] hover:translate-x-[4px] text-[90px] "/>
             </button>
           </div>
@@ -146,7 +153,7 @@ const MainPage = () => {
               <OrbitControls/>
               <CameraController target={focusTarget} />
               <WarriorModel  scale={1.1} position={[0,-1,0]} rotation={[.2,-.8,0]} animationNumber={animationNumber}/>
-              <HopperModel scale={1.1} position={[12, -1, 0]} rotation={[.2,-.8,0]}/>
+              <HopperModel scale={1.1} position={[12, -1, 0]} rotation={[.2,-.8,0]} animationNumber={animationNumber}/>
               <Environment preset="forest" />
               <ambientLight intensity={1} color="white"/>
               <directionalLight position={[-10, 0, 0]} intensity={1} color="white"/>
