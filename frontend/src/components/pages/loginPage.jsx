@@ -57,10 +57,10 @@ const LoginPage = () => {
 
   return (
     
-    <div className=" bg-[url(images/geranimo.jpg)] bg-contain flex flex-col gap-5 justify-center items-center h-full lg:h-screen ">
-      <h2 className="text-[3rem] text-white text-shadow-md text-shadow-black">Service Gurantees Citizenship</h2>
-      <main className="bg-white/10 backdrop-blur-md shadow-md shadow-black  p-7 flex rounded-md gap-7 lg:w-[1222px] text-[var(--primary-color)]">
-        <section className="login-left h-[600px] w-[700px] flex justify-center">
+    <div className=" bg-[url(images/geranimo.jpg)] bg-cover bg-center bg-no-repeat  flex flex-col gap-5 xl:pt-0 pt-5 justify-center items-center h-full xl:h-screen ">
+      <h2 className="text-3xl xl:text-[3rem] text-white text-shadow-md text-shadow-black">Service Gurantees Citizenship</h2>
+      <main className="bg-white/10 backdrop-blur-md shadow-md shadow-black  p-7 justify-center items-center xl:items-stretch flex flex-col xl:flex-row rounded-md gap-7 w-[450px]  xl:w-[1222px] text-[var(--primary-color)]">
+        <section className="login-left h-[400px] w-[400px] xl:h-[600px] xl:w-[700px] flex justify-center">
           <Canvas className=" size-full rounded-md shadow-md shadow-black">
             <Suspense fallback={<SuspenseLoader/>}>
               <ambientLight intensity={1}/>
@@ -73,7 +73,7 @@ const LoginPage = () => {
             </Suspense>
           </Canvas>
         </section>
-        <section className="login-right lg:w-[450px] flex flex-col items-center justify-between ">
+        <section className="login-right w-[400px] xl:w-[450px] flex flex-col items-center justify-between ">
           <h2 className="text-4xl text-[var(--tertiary-color)] ">Federal Armed Services</h2>
           <form className="p-6 bg-[var(--tertiary-color)]  shadow-md shadow-black  rounded w-full h-[440px] flex justify-center flex-col gap-7 lg:text-xl relative " onSubmit={()=> {handleLogin(); handleLoginAlternative()}}>
             <h2 className="text-shadow-md text-shadow-white font-semibold">Login to Database:</h2>
