@@ -58,9 +58,9 @@ const LoginPage = () => {
   return (
     
     <div className=" bg-[url(images/geranimo.jpg)] bg-cover bg-center bg-no-repeat  flex flex-col gap-5 xl:py-0 py-5 xl:px-0 px-5 justify-center items-center h-full xl:h-screen ">
-      <h2 className="text-3xl xl:text-[3rem] text-white text-shadow-md text-shadow-black">Service Gurantees Citizenship</h2>
+      <h2 className="text-2xl lg:text-3xl xl:text-[3rem] text-white text-shadow-md text-shadow-black">Service Gurantees Citizenship</h2>
       <main className="bg-white/10 backdrop-blur-md shadow-md shadow-black  p-3 xl:p-7 justify-center items-center xl:items-stretch flex flex-col xl:flex-row rounded-md gap-7 w-[380px] sm:w-[420px]  xl:w-[1222px] text-[var(--primary-color)]">
-        <section className="login-left w-[360px] h-[360px] sm:h-[380px] sm:w-[380px] xl:h-[600px] xl:w-[700px] flex justify-center xl:pt-0 pt-0 sm:pt-2">
+        <section className="login-left w-[360px] h-[360px] sm:h-[380px] sm:w-[380px] xl:h-[600px] xl:w-[700px] flex justify-center  xl:pt-0 pt-0 sm:pt-2">
           <Canvas className=" size-full rounded-md shadow-md shadow-black">
             <Suspense fallback={<SuspenseLoader/>}>
               <ambientLight intensity={1}/>
@@ -73,8 +73,8 @@ const LoginPage = () => {
             </Suspense>
           </Canvas>
         </section>
-        <section className="login-right w-[360px] sm:w-[380px] xl:w-[450px] flex flex-col items-center justify-between xl:pb-0 pb-2">
-          <h2 className="text-4xl text-[var(--tertiary-color)] ">Federal Armed Services</h2>
+        <section className="login-right w-[360px] sm:w-[380px] xl:w-[450px] flex flex-col items-center justify-between xl:pb-0 xl:gap-0 gap-3 pb-2">
+          <h2 className="text-2xl lg:text-3xl xl:text-4xl text-[var(--tertiary-color)] ">Federal Armed Services</h2>
           <form className="p-6 bg-[var(--tertiary-color)]  shadow-md shadow-black  rounded w-full h-[440px] flex justify-center flex-col gap-7 lg:text-xl relative " onSubmit={()=> {handleLogin(); handleLoginAlternative()}}>
             <h2 className="text-shadow-md text-shadow-white font-semibold">Login to Database:</h2>
             <div className="flex flex-col">
@@ -91,9 +91,9 @@ const LoginPage = () => {
               <button className="bg-[var(--quarternary-color)] border-2 border-black w-[145px] p-2 rounded-sm" type="button" onClick={()=> {navigateRegister(); navigateRegisterAlternative()}}>Register</button>
             </div>
             <img className="absolute top-[4%] right-[5%] z-10 size-[80px]" src={Eagle} alt="" />
-            <img className="absolute bottom-[6%] right-[44%] z-10 size-[50px]" src={Global} alt="" />
+            <img className="absolute bottom-[9%] right-[46.5%] xl:bottom-[6%] xl:right-[44%] z-10 size-[25px] xl:size-[50px]" src={Global} alt="" />
           </form>
-          <button className="bg-[var(--primary-color)] text-[var(--tertiary-color)] text-3xl p-2 rounded w-full shadow-md shadow-black" type="button" onClick={navigateGuest}>Guest Login</button>
+          <button className="bg-[var(--primary-color)] text-[var(--tertiary-color)]  text-2xl lg:text-3xl  p-2 rounded w-full shadow-md shadow-black" type="button" onClick={navigateGuest}>Guest Login</button>
         </section>
       </main>
     </div>
