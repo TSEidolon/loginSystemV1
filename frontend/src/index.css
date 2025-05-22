@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&display=swap');
 @import "tailwindcss";
 
+@theme {
+  --breakpoint-3xl: 1800px;
+}
+
 :root {
   --primary-color: #092A21;
   --secondary-color: #25A784;

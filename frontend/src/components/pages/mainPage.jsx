@@ -64,14 +64,14 @@ const checkClick = (target) => {
 
   return (
     <div className=" ">
-      <main className="hero-section  bg-[var(--tertiary-color)] flex justify-between items-center h-screen relative px-[7rem]">
+      <main className="hero-section  bg-[var(--tertiary-color)] flex flex-col 3xl:flex-row justify-between items-center h-screen relative px-[7rem] 3xl:pt-0 pt-[70px]">
       <button onClick={handleLogout} className="group absolute z-10 top-5 left-[6%]  delay-500">
         <p className="transition-all ease-in-out text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] font-semibold">Return</p>
         <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] group-hover:translate-x-[-4px] text-[50px] "/>
       </button>
       <img className="absolute top-5 left-1/2 z-10 size-[80px]" src={Eagle} alt="" />
 
-      <section className="main-left max-w-[50%]">
+      <section className="main-left max-w-[50%] sm:w-[500px] sm:h-[450px] 3xl:w-[850px] 3xl:h-[600px]">
         <h1 className="text-[8rem] text-[var(--primary-color)] px-2 ">Welcome to the Main Page!</h1>
         <p className="text-[2rem] py-6 px-2 text-[var(--primary-color)] ">Mini Catch Phrase here!</p>
         <div className="flex justify-start px-2 pb-6 items-center">
