@@ -64,14 +64,14 @@ const checkClick = (target) => {
 
   return (
     <div className=" ">
-      <main className="hero-section  bg-[var(--tertiary-color)] flex flex-col 3xl:flex-row justify-between items-center h-screen relative px-[2rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:pt-0 pt-[110px]">
+      <main className="hero-section  bg-[var(--tertiary-color)] flex flex-col 3xl:flex-row justify-between items-center h-screen relative px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:pt-0 pt-[110px]">
       <button onClick={handleLogout} className="group absolute z-10 top-5 left-[6%]  delay-500">
         <p className="transition-all ease-in-out text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] font-semibold">Return</p>
         <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] group-hover:translate-x-[-4px] text-[50px] "/>
       </button>
       <img className="absolute top-5 left-[46%] z-10 size-[60px] lg:size-[80px]" src={Eagle} alt="" />
 
-      <section className="main-left max-w-[full] 3xl:max-w-[50%] flex flex-col 3xl:items-stretch items-center gap-2 sm:gap-10 3xl:gap-0">
+      <section className="main-left 3xl:w-[850px] max-w-[full] 3xl:max-w-[50%] flex flex-col 3xl:items-stretch items-center gap-2 sm:gap-10 3xl:gap-0">
         <h1 className="text-[1.5rem] sm:text-[4rem] 2xl:text-[6rem] 3xl:text-[8rem] text-[var(--primary-color)] px-2 ">Welcome to the Main Page!</h1>
         <p className="text-[1rem] sm:text-[2rem] py-6 px-2 text-[var(--primary-color)] ">Mini Catch Phrase here!</p>
         <div className="flex justify-start px-2 pb-6 items-center">
@@ -95,7 +95,7 @@ const checkClick = (target) => {
       </section>
       </main>
 
-      <main className="h-screen relative  bg-[var(--tertiary-color)] flex justify-between items-center gap-5 px-[7rem] w-full">
+      <main className="h-screen relative  bg-[var(--tertiary-color)] flex justify-between items-center gap-5 px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] w-full">
         <img className="absolute  top-0 left-[6%] w-[700px] " src={Divider} alt="" />
         <section className=" w-[850px] h-[600px] relative flex flex-col border-2 border-black  rounded-md">
           <div className="button-area absolute z-10 -right-11 top-4 flex flex-col gap-5">
