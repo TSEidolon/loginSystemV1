@@ -64,26 +64,26 @@ const checkClick = (target) => {
 
   return (
     <div className=" ">
-      <main className="hero-section  bg-[var(--tertiary-color)] flex flex-col 3xl:flex-row justify-between items-center h-screen relative px-[7rem] 3xl:pt-0 pt-[70px]">
+      <main className="hero-section  bg-[var(--tertiary-color)] flex flex-col 3xl:flex-row justify-between items-center h-screen relative px-[2rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:pt-0 pt-[110px]">
       <button onClick={handleLogout} className="group absolute z-10 top-5 left-[6%]  delay-500">
         <p className="transition-all ease-in-out text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] font-semibold">Return</p>
         <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] group-hover:translate-x-[-4px] text-[50px] "/>
       </button>
-      <img className="absolute top-5 left-1/2 z-10 size-[80px]" src={Eagle} alt="" />
+      <img className="absolute top-5 left-[46%] z-10 size-[60px] lg:size-[80px]" src={Eagle} alt="" />
 
-      <section className="main-left max-w-[50%] sm:w-[500px] sm:h-[450px] 3xl:w-[850px] 3xl:h-[600px]">
-        <h1 className="text-[8rem] text-[var(--primary-color)] px-2 ">Welcome to the Main Page!</h1>
-        <p className="text-[2rem] py-6 px-2 text-[var(--primary-color)] ">Mini Catch Phrase here!</p>
+      <section className="main-left max-w-[full] 3xl:max-w-[50%] flex flex-col 3xl:items-stretch items-center gap-2 sm:gap-10 3xl:gap-0">
+        <h1 className="text-[1.5rem] sm:text-[4rem] 2xl:text-[6rem] 3xl:text-[8rem] text-[var(--primary-color)] px-2 ">Welcome to the Main Page!</h1>
+        <p className="text-[1rem] sm:text-[2rem] py-6 px-2 text-[var(--primary-color)] ">Mini Catch Phrase here!</p>
         <div className="flex justify-start px-2 pb-6 items-center">
           <button
-            className="  text-2xl w-[400px]  py-2 rounded bg-[var(--quarternary-color)] text-[var(--primary-color)] text-shadow-xs text-shadow-orange shadow-md shadow-black transition-all ease-in-out hover:bg-[var(--primary-color)] hover:text-[var(--tertiary-color)] "
+            className="  text-xl sm:text-2xl w-[300px] sm:w-[400px]  py-2 rounded bg-[var(--quarternary-color)] text-[var(--primary-color)] text-shadow-xs text-shadow-orange shadow-md shadow-black transition-all ease-in-out hover:bg-[var(--primary-color)] hover:text-[var(--tertiary-color)] "
           >
             Begin
           </button>
         </div>
 
       </section>
-      <section className="main-right z-10 bg-[url(images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat lg:w-[700px] lg:h-full ">
+      <section className="main-right z-10 bg-[url(images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat w-full h-[700px] 3xl:w-[700px] 3xl:h-full ">
         <Canvas>
           <Suspense fallback={<SuspenseLoader/>}>
             <SphereSciFi  scale={1.5}/>
