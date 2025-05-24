@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, Suspense, useState, useRef } from "react";
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, Environment, CameraControls } from '@react-three/drei'
+import { useMediaQuery } from 'react-responsive';
+import { calculateSizes } from "../features/modelMediaQuery";
 
 import { SphereSciFi } from "../modelComponents/sphereSciFi";
 import SuspenseLoader from "../features/suspenseLoader";
@@ -37,6 +39,12 @@ const MainPage = () => {
   const [warriorTarget, SetWarriorTarget] = useState(true)
   const [focusTarget, setFocusTarget] = useState([0, 0, 0])
 
+  //Media queries for 3d Models
+  const isSmall = useMediaQuery({ maxWidth: 650 });
+  const isMedium = useMediaQuery({ maxWidth: 768 });
+  const isLarge = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
+  const sizes = calculateSizes(isSmall, isMedium, isLarge);
+
   const showInfo = (e) => {
     setArachnidInfo(e)
   }
@@ -64,12 +72,12 @@ const checkClick = (target) => {
 
   return (
     <div className=" ">
-      <main className="hero-section  bg-[var(--tertiary-color)] flex flex-col 3xl:flex-row justify-between items-center h-screen relative px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:pt-0 pt-[110px]">
+      <main className="hero-section  bg-[var(--tertiary-color)] flex flex-col 3xl:flex-row justify-center sm:justify-between items-center h-screen relative px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:pt-0 pt-[110px]">
       <button onClick={handleLogout} className="group absolute z-10 top-5 left-[6%]  delay-500">
         <p className="transition-all ease-in-out text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] font-semibold">Return</p>
         <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] group-hover:translate-x-[-4px] text-[50px] "/>
       </button>
-      <img className="absolute top-5 left-[46%] z-10 size-[60px] lg:size-[80px]" src={Eagle} alt="" />
+      <img className="absolute top-5 left-[49%] z-10 size-[60px] lg:size-[80px]" src={Eagle} alt="" />
 
       <section className="main-left 3xl:w-[850px] max-w-[full] 3xl:max-w-[50%] flex flex-col 3xl:items-stretch items-center gap-2 sm:gap-10 3xl:gap-0">
         <h1 className="text-[1.5rem] sm:text-[4rem] 2xl:text-[6rem] 3xl:text-[8rem] text-[var(--primary-color)] px-2 ">Welcome to the Main Page!</h1>
@@ -83,10 +91,10 @@ const checkClick = (target) => {
         </div>
 
       </section>
-      <section className="main-right z-10 bg-[url(images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat w-full h-[700px] 3xl:w-[700px] 3xl:h-full ">
+      <section className="main-right z-10 bg-[url(images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat w-full h-[400px]  3xl:w-[700px] xl:h-full ">
         <Canvas>
           <Suspense fallback={<SuspenseLoader/>}>
-            <SphereSciFi  scale={1.5}/>
+            <SphereSciFi  scale={sizes.sphereScale}/>
             <Environment preset="sunset" />
             <ambientLight intensity={1} color="white"/>
             <directionalLight position={[0, 300, 0]} intensity={1} color="white"/>
@@ -152,7 +160,7 @@ const checkClick = (target) => {
             <Suspense fallback={<SuspenseLoader/>}>
               <OrbitControls/>
               <CameraController target={focusTarget} />
-              <WarriorModel  scale={1.1} position={[0,-1,0]} rotation={[.2,-.8,0]} animationNumber={animationNumber}/>
+              <WarriorModel  scale={sizes.warriorScale} position={[0,-1,0]} rotation={[.2,-.8,0]} animationNumber={animationNumber}/>
               <HopperModel scale={1} position={[14, -1, 0]} rotation={[.2,-.8,0]} animationNumber={animationNumber}/>
               <Environment preset="forest" />
               <ambientLight intensity={1} color="white"/>
