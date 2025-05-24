@@ -91,7 +91,7 @@ const checkClick = (target) => {
         </div>
 
       </section>
-      <section className="main-right z-10 bg-[url(images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat w-full h-[400px]  3xl:w-[700px] xl:h-full ">
+      <section className="main-right z-10 bg-[url(images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat w-full h-[400px]  3xl:w-[700px] 3xl:h-full ">
         <Canvas>
           <Suspense fallback={<SuspenseLoader/>}>
             <SphereSciFi  scale={sizes.sphereScale}/>
@@ -103,7 +103,7 @@ const checkClick = (target) => {
       </section>
       </main>
 
-      <main className="h-screen relative  bg-[var(--tertiary-color)] flex justify-between items-center gap-5 px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] w-full">
+      <main className="main-info-section h-full 3xl:h-screen relative  bg-[var(--tertiary-color)] flex flex-col 3xl:flex-row justify-center sm:justify-between items-center px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:pt-0 pt-[150px] 3xl:gap-0 gap-5">
         <img className="absolute  top-0 left-[6%] w-[700px] " src={Divider} alt="" />
         <section className=" w-[850px] h-[600px] relative flex flex-col border-2 border-black  rounded-md">
           <div className="button-area absolute z-10 -right-11 top-4 flex flex-col gap-5">
