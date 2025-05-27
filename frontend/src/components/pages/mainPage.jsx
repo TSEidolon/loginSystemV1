@@ -72,7 +72,7 @@ const checkClick = (target) => {
 
   return (
     <div className=" ">
-      <main className="hero-section  bg-[var(--tertiary-color)] flex flex-col 3xl:flex-row justify-center sm:justify-between items-center h-screen relative px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:pt-0 pt-[110px]">
+      <main className="hero-section bg-[url(images/background0.png)] bg-cover bg-center bg-no-repeat bg-[var(--tertiary-color)] flex flex-col 3xl:flex-row justify-center sm:justify-between items-center h-screen relative px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:pt-0 pt-[110px]">
       <button onClick={handleLogout} className="group absolute z-10 top-5 left-[6%]  delay-500">
         <p className="transition-all ease-in-out text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] font-semibold">Return</p>
         <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] group-hover:translate-x-[-4px] text-[50px] "/>
@@ -102,8 +102,18 @@ const checkClick = (target) => {
         </Canvas>
       </section>
       </main>
-
-      <main className="main-info-section h-full 3xl:h-screen relative  bg-[var(--tertiary-color)] flex flex-col 3xl:flex-row justify-center sm:justify-between items-center px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:pt-0 pt-[150px] 3xl:gap-0 gap-5">
+      <div class="custom-shape-divider-bottom-1748316081">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" class="shape-fill"></path>
+          </svg>
+      </div>
+      <div class="custom-shape-divider-top-1748315651">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" class="shape-fill"></path>
+          </svg>
+      </div>
+      <main className="main-info-section bg-[url(images/background0.png)] bg-cover bg-left bg-no-repeat h-full 3xl:h-screen relative  bg-[var(--tertiary-color)] flex flex-col 3xl:flex-row justify-center sm:justify-between items-center px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:pt-0 pt-[150px] 3xl:gap-0 gap-5">
+      
         <img className="absolute  top-0 left-[6%] w-[700px] " src={Divider} alt="" />
         <section className=" w-[850px] h-[600px] relative flex flex-col border-2 border-black  rounded-md">
           <div className="button-area absolute z-10 -right-11 top-4 flex flex-col gap-5">
