@@ -72,12 +72,12 @@ const checkClick = (target) => {
 
   return (
     <div className=" ">
-      <main className="hero-section bg-[url(images/background0.png)] bg-cover bg-center bg-no-repeat bg-[var(--tertiary-color)] flex flex-col 3xl:flex-row justify-center sm:justify-between items-center h-screen relative px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:pt-0 pt-[110px]">
+      <main className="hero-section bg-[url(images/background0.png)] bg-cover bg-center bg-no-repeat bg-[var(--tertiary-color)] flex flex-col 3xl:flex-row justify-center sm:justify-between items-center h-full 3xl:h-screen relative px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:pt-0 pt-[110px]">
       <button onClick={handleLogout} className="group absolute z-10 top-5 left-[6%]  delay-500">
         <p className="transition-all ease-in-out text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] font-semibold">Return</p>
         <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] group-hover:translate-x-[-4px] text-[50px] "/>
       </button>
-      <img className="absolute top-5 left-[49%] z-10 size-[60px] lg:size-[80px]" src={Eagle} alt="" />
+      <img className="absolute top-5 left-[46%] sm:left-[49%] z-10 size-[60px] lg:size-[80px]" src={Eagle} alt="" />
 
       <section className="main-left 3xl:w-[850px] max-w-[full] 3xl:max-w-[50%] flex flex-col 3xl:items-stretch items-center gap-2 sm:gap-10 3xl:gap-0">
         <h1 className="text-[1.5rem] sm:text-[4rem] 2xl:text-[6rem] 3xl:text-[8rem] text-[var(--primary-color)] px-2 ">Welcome to the Main Page!</h1>
@@ -91,7 +91,7 @@ const checkClick = (target) => {
         </div>
 
       </section>
-      <section className="main-right z-10 bg-[url(images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat w-full h-[400px]  3xl:w-[700px] 3xl:h-full ">
+      <section className="main-right z-10 bg-[url(images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat w-full h-[400px]  3xl:w-[700px] 3xl:h-full xl:rounded-none rounded-md">
         <Canvas>
           <Suspense fallback={<SuspenseLoader/>}>
             <SphereSciFi  scale={sizes.sphereScale}/>
@@ -101,33 +101,34 @@ const checkClick = (target) => {
           </Suspense>
         </Canvas>
       </section>
-      </main>
       <div class="custom-shape-divider-bottom-1748316081">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
               <path d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" class="shape-fill"></path>
           </svg>
       </div>
-      <div class="custom-shape-divider-top-1748315651">
-          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-              <path d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" class="shape-fill"></path>
-          </svg>
-      </div>
-      <main className="main-info-section bg-[url(images/background0.png)] bg-cover bg-left bg-no-repeat h-full 3xl:h-screen relative  bg-[var(--tertiary-color)] flex flex-col 3xl:flex-row justify-center sm:justify-between items-center px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:pt-0 pt-[150px] 3xl:gap-0 gap-5">
+      </main>
+
       
-        <img className="absolute  top-0 left-[6%] w-[700px] " src={Divider} alt="" />
-        <section className=" w-[850px] h-[600px] relative flex flex-col border-2 border-black  rounded-md">
-          <div className="button-area absolute z-10 -right-11 top-4 flex flex-col gap-5">
-            <button className={("h-[60px] w-[90px] rounded-md  hover:scale-110 border-2 border-black shadow-sm shadow-black ") +  (arachnidInfo===0 ? " bg-[var(--primary-color)] text-[var(--tertiary-color)] ": "  bg-[var(--tertiary-color)] ")} onClick={() => {showInfo(0), checkClick(0),setAnimationNumber(0)}}>
+      <main className="main-info-section bg-[url(images/background0.png)] bg-cover bg-left bg-no-repeat h-full 3xl:h-screen relative  bg-[var(--tertiary-color)] flex flex-col-reverse 3xl:flex-row justify-center sm:justify-between items-center px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:py-0 py-[200px] 3xl:gap-0 gap-5">
+        <div class="custom-shape-divider-top-1748315651">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" class="shape-fill"></path>
+            </svg>
+        </div>
+        {/* <img className="absolute  top-0 left-[6%] w-[700px] " src={Divider} alt="" /> */}
+        <section className=" w-[330px] h-[370px] lg:w-[750px] lg:h-[650px]  relative flex flex-col border-2 border-black  rounded-md">
+          <div className="button-area absolute z-10 -right-5 lg:-right-11 top-4 flex flex-col gap-5">
+            <button className={("w-[50px] h-[35px] lg:h-[60px] lg:w-[90px] rounded-md  hover:scale-110 border-2 border-black shadow-sm shadow-black ") +  (arachnidInfo===0 ? " bg-[var(--primary-color)] text-[var(--tertiary-color)] ": "  bg-[var(--tertiary-color)] ")} onClick={() => {showInfo(0), checkClick(0),setAnimationNumber(0)}}>
               <IoIosStats className=" size-full p-2 "/>
             </button>
-            <button className={("h-[60px] w-[90px] rounded-md  hover:scale-110 border-2 border-black shadow-sm shadow-black ") +  (arachnidInfo===1 ? " bg-[var(--primary-color)] text-[var(--tertiary-color)] ": "  bg-[var(--tertiary-color)] ")} onClick={() => {showInfo(1), checkClick(1),setAnimationNumber(1)}}>
+            <button className={("w-[50px] h-[35px] lg:h-[60px] lg:w-[90px] rounded-md  hover:scale-110 border-2 border-black shadow-sm shadow-black ") +  (arachnidInfo===1 ? " bg-[var(--primary-color)] text-[var(--tertiary-color)] ": "  bg-[var(--tertiary-color)] ")} onClick={() => {showInfo(1), checkClick(1),setAnimationNumber(1)}}>
               <GiPistolGun className=" size-full p-2"/>
             </button>
-            <button className={("h-[60px] w-[90px] rounded-md  hover:scale-110 border-2 border-black shadow-sm shadow-black ") +  (arachnidInfo===2 ? " bg-[var(--primary-color)] text-[var(--tertiary-color)] ": "  bg-[var(--tertiary-color)] ")} onClick={() => {showInfo(2), checkClick(2),setAnimationNumber(2)}}>
+            <button className={("w-[50px] h-[35px] lg:h-[60px] lg:w-[90px] rounded-md  hover:scale-110 border-2 border-black shadow-sm shadow-black ") +  (arachnidInfo===2 ? " bg-[var(--primary-color)] text-[var(--tertiary-color)] ": "  bg-[var(--tertiary-color)] ")} onClick={() => {showInfo(2), checkClick(2),setAnimationNumber(2)}}>
               <FaBook className=" size-full p-2 "/>
             </button>
           </div>
-          <div className="text-area font-semibold h-[85%] text-[var(--primary-color)]">
+          <div className="text-area font-semibold h-[85%] text-[11px] lg:text-[14px] xl:text-[18px] text-[var(--primary-color)]">
             <div className={(" flex-col pl-5 pr-[4rem]")+(arachnidInfo ===0 && warriorTarget == true ? " flex": " hidden")}>
               <h2>Test One</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam voluptatibus voluptates doloribus quam, alias est aliquid saepe possimus iure exercitationem inventore enim officia nesciunt ipsa vero porro repudiandae reprehenderit accusantium modi impedit. Sed, asperiores esse nulla veniam possimus cupiditate voluptatem nesciunt hic dolor ullam facere sint laudantium cumque. Dolorem, fugit consequuntur, molestias voluptatem enim maxime ratione neque optio magnam consequatur fuga cum deleniti ab id officia unde ipsum sapiente. Tenetur necessitatibus minus laudantium eum inventore maxime enim ab adipisci.</p>
@@ -156,16 +157,16 @@ const checkClick = (target) => {
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam voluptatibus voluptates doloribus quam, alias est aliquid saepe possimus iure exercitationem inventore enim officia nesciunt ipsa vero porro repudiandae reprehenderit accusantium modi impedit. Sed, asperiores esse nulla veniam possimus cupiditate voluptatem nesciunt hic dolor ullam facere sint laudantium cumque. Dolorem, fugit consequuntur, molestias voluptatem enim maxime ratione neque optio magnam consequatur fuga cum deleniti ab id officia unde ipsum sapiente. Tenetur necessitatibus minus laudantium eum inventore maxime enim ab adipisci.</p>
             </div>
           </div>
-          <div className="arrow-area h-[15%] w-full flex justify-evenly items-center  border-t-2 ">
+          <div className="arrow-area  lg:h-[15%] w-full flex justify-evenly items-center  border-t-2 ">
             <button onClick={() => { setFocusTarget([0, 0, 0]), SetWarriorTarget(true), checkClick(true)}}>
-              <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] hover:text-[var(--secondary-color)] hover:translate-x-[-4px] text-[90px] "/>
+              <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] hover:text-[var(--secondary-color)] hover:translate-x-[-4px] text-[50px] lg:text-[90px] "/>
             </button>
             <button onClick={() => {setFocusTarget([14, 0, 0]), SetWarriorTarget(false), checkClick(false) }}>
-              <MdOutlineKeyboardDoubleArrowRight className="transition-all ease-in-out  text-[var(--primary-color)] hover:text-[var(--secondary-color)] hover:translate-x-[4px] text-[90px] "/>
+              <MdOutlineKeyboardDoubleArrowRight className="transition-all ease-in-out  text-[var(--primary-color)] hover:text-[var(--secondary-color)] hover:translate-x-[4px] text-[50px] lg:text-[90px] "/>
             </button>
           </div>
         </section>
-        <section className="lg:w-[700px] lg:h-full  bg-[url(images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat">
+        <section className="w-full h-[400px]  3xl:w-[700px] 3xl:h-full  bg-[url(images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat xl:rounded-none rounded-md">
           <Canvas >
             <Suspense fallback={<SuspenseLoader/>}>
               <OrbitControls/>
