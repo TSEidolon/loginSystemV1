@@ -74,8 +74,8 @@ const checkClick = (target) => {
     <div className=" ">
       <main className="hero-section bg-[url(images/background0.png)] bg-cover bg-center bg-no-repeat bg-[var(--tertiary-color)] flex flex-col 3xl:flex-row justify-center sm:justify-between items-center h-full 3xl:h-screen relative px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:pt-0 pt-[110px]">
       <button onClick={handleLogout} className="group absolute z-10 top-5 left-[6%]  delay-500">
-        <p className="transition-all ease-in-out text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] font-semibold">Return</p>
-        <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] group-hover:translate-x-[-4px] text-[50px] "/>
+        <p className="transition-all text-sm lg:text-base ease-in-out text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] font-semibold">Return</p>
+        <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] group-hover:translate-x-[-4px] text-[40px] lg:text-[50px] "/>
       </button>
       <img className="absolute top-5 left-[46%] sm:left-[49%] z-10 size-[60px] lg:size-[80px]" src={Eagle} alt="" />
 
@@ -107,9 +107,7 @@ const checkClick = (target) => {
           </svg>
       </div>
       </main>
-
-      
-      <main className="main-info-section bg-[url(images/background0.png)] bg-cover  bg-no-repeat h-full 3xl:h-screen relative  bg-[var(--tertiary-color)] flex flex-col-reverse 3xl:flex-row justify-center sm:justify-between items-center px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:py-0 py-[200px] 3xl:gap-0 gap-5">
+      <main className="main-info-section bg-[url(images/background0.png)] bg-cover  bg-no-repeat h-full 3xl:h-screen relative  bg-[var(--tertiary-color)] flex flex-col-reverse 3xl:flex-row justify-center sm:justify-between items-center px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:pb-5 3xl:py-0 py-[200px] 3xl:gap-0 gap-5 ">
         <div class="custom-shape-divider-top-1748315651">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" class="shape-fill"></path>
@@ -261,7 +259,7 @@ const checkClick = (target) => {
             <button onClick={() => { setFocusTarget([0, 0, 0]), SetWarriorTarget(true), checkClick(true)}}>
               <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] hover:text-[var(--secondary-color)] hover:translate-x-[-4px] text-[50px] lg:text-[90px] "/>
             </button>
-            <button onClick={() => {setFocusTarget([14, 0, 0]), SetWarriorTarget(false), checkClick(false) }}>
+            <button onClick={() => {setFocusTarget([14, 0, 1]), SetWarriorTarget(false), checkClick(false) }}>
               <MdOutlineKeyboardDoubleArrowRight className="transition-all ease-in-out  text-[var(--primary-color)] hover:text-[var(--secondary-color)] hover:translate-x-[4px] text-[50px] lg:text-[90px] "/>
             </button>
           </div>
@@ -281,6 +279,11 @@ const checkClick = (target) => {
             </Suspense>
           </Canvas>
         </section>
+      </main>
+      <main className='footer-footsies h-[80px] w-full bg-[color:var(--quarternary-color)] '>
+        <div className='flex items-center justify-center h-full text-sm sm:text-base'>
+          Brought to life by Edgar, fueled by coffee ☕. 
+        </div>
       </main>
     </div>
   );
