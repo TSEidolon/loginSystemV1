@@ -2,6 +2,7 @@
 
 ## A Play on Login Website that shows information about two 3d models of Arachnids - Hopper & Warrior. Made with Express and SQL(PostgreSQL) for the backend and React with Tailiwind for the Frontend
 
+ - Deploying to netlify with the backend folder was giving errors so I used just the frontend folder for deploying.
 p.s. Click the Guest Login Button on the Login Page to gain entry to the Main Area. Also backend only works locally 
 
 Login Area
@@ -11,7 +12,7 @@ Main Area
 ![alt text](image-1.png)
 ![alt text](image-2.png)
 
-Live Website:[Trooper Database](https://trooperdatabase-tseidolon.netlify.app/login)
+Live Website:[Trooper Database](https://trooperdatabase-tseidolon.netlify.app/)
 
 Mockup Made in Figma:[Figma Mockup](https://www.figma.com/design/DmLDTOt30LNPXfDNrb0ZKv/Login?node-id=0-1&t=xvk6YLf5h1J4gCat-1)
 
