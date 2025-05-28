@@ -2,9 +2,11 @@
 
 ## A Play on Login Website that shows information about two 3d models of Arachnids - Hopper & Warrior. Made with Express and SQL(PostgreSQL) for the backend and React with Tailiwind for the Frontend
 
+> p.s. Click the **Guest Login Button** on the Login Page to gain entry to the Main Area. Also backend only works locally 
+
  - Deploying to netlify with the backend folder was giving errors so I used just the frontend folder for deploying.
  
-p.s. Click the Guest Login Button on the Login Page to gain entry to the Main Area. Also backend only works locally 
+
 
 Login Area
 ![alt text](image.png)
