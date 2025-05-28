@@ -70,6 +70,12 @@ const checkClick = (target) => {
     navigate("/");
   };
 
+
+const mainAreaRef = useRef (null)
+const scrollToTarget = () => {
+  mainAreaRef.current?.scrollIntoView({ behavior: 'smooth' })
+}
+
   return (
     <div className=" ">
       <main className="hero-section bg-[url(images/background0.png)] bg-cover bg-center bg-no-repeat bg-[var(--tertiary-color)] flex flex-col 3xl:flex-row justify-center sm:justify-between items-center h-full 3xl:h-screen relative px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:pt-0 pt-[110px]">
@@ -84,7 +90,7 @@ const checkClick = (target) => {
         <p className="text-[1rem] sm:text-[2rem] py-6 px-2 text-[var(--primary-color)] ">Explore the anatomy, tactics, and history of the Warrior and Hopper bugs</p>
         <div className="flex justify-start px-2 pb-6 items-center">
           <button
-            className="  text-xl sm:text-2xl w-[300px] sm:w-[400px]  py-2 rounded bg-[var(--quarternary-color)] text-[var(--primary-color)] text-shadow-xs text-shadow-orange shadow-md shadow-black transition-all ease-in-out hover:bg-[var(--primary-color)] hover:text-[var(--tertiary-color)] "
+            className="  text-xl sm:text-2xl w-[300px] sm:w-[400px]  py-2 rounded bg-[var(--quarternary-color)] text-[var(--primary-color)] text-shadow-xs text-shadow-orange shadow-md shadow-black transition-all ease-in-out hover:bg-[var(--primary-color)] hover:text-[var(--tertiary-color)] " onClick={scrollToTarget}
           >
             Begin
           </button>
@@ -107,14 +113,14 @@ const checkClick = (target) => {
           </svg>
       </div>
       </main>
-      <main className="main-info-section bg-[url(images/background0.png)] bg-cover  bg-no-repeat h-full 3xl:h-screen relative  bg-[var(--tertiary-color)] flex flex-col-reverse 3xl:flex-row justify-center sm:justify-between items-center px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:pb-5 3xl:py-0 py-[200px] 3xl:gap-0 gap-5 ">
+      <main className="main-info-section bg-[url(images/background0.png)] bg-cover  bg-no-repeat h-full 3xl:h-screen relative  bg-[var(--tertiary-color)] flex flex-col-reverse 3xl:flex-row justify-center sm:justify-between items-center px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:pb-5 3xl:py-0 py-[200px] 3xl:gap-0 gap-5 " ref={mainAreaRef}>
         <div class="custom-shape-divider-top-1748315651">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" class="shape-fill"></path>
             </svg>
         </div>
         {/* <img className="absolute  top-0 left-[6%] w-[700px] " src={Divider} alt="" /> */}
-        <section className=" w-[330px] h-[370px] lg:w-[750px] lg:h-[650px]  relative flex flex-col border-2 border-black  rounded-md bg-white/10 backdrop-blur-md shadow-md shadow-black">
+        <section className=" w-[330px] h-[370px] lg:w-[750px] lg:h-[650px]  relative flex flex-col border-2 border-black  rounded-md bg-white/10 backdrop-blur-md shadow-md shadow-black ">
           <div className="button-area absolute z-10 -right-5 lg:-right-11 top-4 flex flex-col gap-5">
             <button className={("w-[50px] h-[35px] lg:h-[60px] lg:w-[90px] rounded-md  hover:scale-110 border-2 border-black shadow-sm shadow-black ") +  (arachnidInfo===0 ? " bg-[var(--primary-color)] text-[var(--tertiary-color)] ": "  bg-[var(--tertiary-color)] ")} onClick={() => {showInfo(0), checkClick(0),setAnimationNumber(0)}}>
               <IoIosStats className=" size-full p-2 "/>
@@ -264,7 +270,7 @@ const checkClick = (target) => {
             </button>
           </div>
         </section>
-        <section className="w-full h-[400px]  3xl:w-[700px] 3xl:h-full  bg-[url(images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat xl:rounded-none rounded-md">
+        <section className="w-full h-[400px]  3xl:w-[700px] 3xl:h-full  bg-[url(images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat xl:rounded-b-md rounded-md ">
           <Canvas >
             <Suspense fallback={<SuspenseLoader/>}>
               <OrbitControls/>
