@@ -86,8 +86,8 @@ const scrollToTarget = () => {
       <img className="absolute top-5 left-[46%] sm:left-[49%] z-10 size-[60px] lg:size-[80px]" src={Eagle} alt="" />
 
       <section className="main-left 3xl:w-[850px] max-w-[full] 3xl:max-w-[50%] flex flex-col 3xl:items-stretch items-center gap-2 sm:gap-10 3xl:gap-0">
-        <h1 className="text-[1.5rem] sm:text-[4rem] 2xl:text-[6rem] 3xl:text-[8rem] text-[var(--primary-color)] px-2 ">The Arachnid Threat</h1>
-        <p className="text-[1rem] sm:text-[2rem] py-6 px-2 text-[var(--primary-color)] ">Explore the anatomy, tactics, and history of the Warrior and Hopper bugs</p>
+        <h1 className="text-[1.5rem] sm:text-[4rem] 2xl:text-[6rem] 3xl:text-[8rem] text-[var(--primary-color)] px-2 select-none">The Arachnid Threat</h1>
+        <p className="text-[1rem] sm:text-[2rem] py-6 px-2 text-[var(--primary-color)] select-none">Explore the anatomy, tactics, and history of the Warrior and Hopper bugs</p>
         <div className="flex justify-start px-2 pb-6 items-center">
           <button
             className="  text-xl sm:text-2xl w-[300px] sm:w-[400px]  py-2 rounded bg-[var(--quarternary-color)] text-[var(--primary-color)] text-shadow-xs text-shadow-orange shadow-md shadow-black transition-all ease-in-out hover:bg-[var(--primary-color)] hover:text-[var(--tertiary-color)] " onClick={scrollToTarget}
