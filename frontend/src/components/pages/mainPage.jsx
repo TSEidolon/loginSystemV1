@@ -109,14 +109,14 @@ const checkClick = (target) => {
       </main>
 
       
-      <main className="main-info-section bg-[url(images/background0.png)] bg-cover bg-left bg-no-repeat h-full 3xl:h-screen relative  bg-[var(--tertiary-color)] flex flex-col-reverse 3xl:flex-row justify-center sm:justify-between items-center px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:py-0 py-[200px] 3xl:gap-0 gap-5">
+      <main className="main-info-section bg-[url(images/background0.png)] bg-cover  bg-no-repeat h-full 3xl:h-screen relative  bg-[var(--tertiary-color)] flex flex-col-reverse 3xl:flex-row justify-center sm:justify-between items-center px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:py-0 py-[200px] 3xl:gap-0 gap-5">
         <div class="custom-shape-divider-top-1748315651">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" class="shape-fill"></path>
             </svg>
         </div>
         {/* <img className="absolute  top-0 left-[6%] w-[700px] " src={Divider} alt="" /> */}
-        <section className=" w-[330px] h-[370px] lg:w-[750px] lg:h-[650px]  relative flex flex-col border-2 border-black  rounded-md">
+        <section className=" w-[330px] h-[370px] lg:w-[750px] lg:h-[650px]  relative flex flex-col border-2 border-black  rounded-md bg-white/10 backdrop-blur-md shadow-md shadow-black">
           <div className="button-area absolute z-10 -right-5 lg:-right-11 top-4 flex flex-col gap-5">
             <button className={("w-[50px] h-[35px] lg:h-[60px] lg:w-[90px] rounded-md  hover:scale-110 border-2 border-black shadow-sm shadow-black ") +  (arachnidInfo===0 ? " bg-[var(--primary-color)] text-[var(--tertiary-color)] ": "  bg-[var(--tertiary-color)] ")} onClick={() => {showInfo(0), checkClick(0),setAnimationNumber(0)}}>
               <IoIosStats className=" size-full p-2 "/>
@@ -128,10 +128,41 @@ const checkClick = (target) => {
               <FaBook className=" size-full p-2 "/>
             </button>
           </div>
-          <div className="text-area font-semibold h-[85%] text-[11px] lg:text-[14px] xl:text-[18px] text-[var(--primary-color)]">
-            <div className={(" flex-col pl-5 pr-[4rem]")+(arachnidInfo ===0 && warriorTarget == true ? " flex": " hidden")}>
-              <h2>Test One</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam voluptatibus voluptates doloribus quam, alias est aliquid saepe possimus iure exercitationem inventore enim officia nesciunt ipsa vero porro repudiandae reprehenderit accusantium modi impedit. Sed, asperiores esse nulla veniam possimus cupiditate voluptatem nesciunt hic dolor ullam facere sint laudantium cumque. Dolorem, fugit consequuntur, molestias voluptatem enim maxime ratione neque optio magnam consequatur fuga cum deleniti ab id officia unde ipsum sapiente. Tenetur necessitatibus minus laudantium eum inventore maxime enim ab adipisci.</p>
+          <div className="text-area font-semibold h-[85%] text-[11px] lg:text-[14px] xl:text-[18px] text-[var(--primary-color)]  p-5">
+            <div className={(" flex-col justify-center items-start pl-5 pr-[4rem] gap-5 h-full")+(arachnidInfo ===0 && warriorTarget == true ? " flex": " hidden")}>
+              <h2 className="text-xl lg:text-[45px] text-[var(--primary-color)]">Bio Statistics</h2>
+              <h3 className="text-lg lg:text-[30px]">Warrior Arachnid</h3>
+              <ul className="text-[9px] lg:text-xl flex flex-col gap-2">
+                <li className="flex  gap-2">
+                  <p className="font-bold ">Height:</p>
+                  <p>~2.5 meters at the head</p>
+                </li>
+                <li className="flex  gap-2">
+                  <p className="font-semibold">Length:</p>
+                  <p>~3-4 meters</p>
+                </li>
+                <li className="flex  gap-2">
+                  <p className="font-semibold">Weight:</p>
+                  <p>~1,500-2,000 kg </p>
+                </li>
+                <li className="flex  gap-2">
+                  <p className="font-semibold">Exoskeleton:</p>
+                  <p>Hardened chitin, resistant to small arms fire</p>
+                </li>
+                <li className="flex  gap-2">
+                  <p className="font-semibold">Speed:</p>
+                  <p>Fast on foot; capable of charging at high speeds</p>
+                </li>
+                <li className="flex  gap-2">
+                  <p className="font-semibold">Strength:</p>
+                  <p>Can rip through steel and crush human soldiers easily</p>
+                </li>
+                <li className="flex  gap-2">
+                  <p className="font-semibold">Senses:</p>
+                  <p>Excellent at tracking via vibrations and pheromones</p>
+                </li>
+
+              </ul>
             </div>
             <div className={("text-blue-400")+(arachnidInfo===1 && warriorTarget == true ? " flex": " hidden")}>
               <h2>Test One</h2>
