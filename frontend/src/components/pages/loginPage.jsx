@@ -91,7 +91,7 @@ const LoginPage = () => {
               <button className="bg-[var(--quarternary-color)] border-2 border-black w-[145px] p-2 rounded-sm" type="button" onClick={()=> {navigateRegister(); navigateRegisterAlternative()}}>Register</button>
             </div>
             <img className="absolute top-[4%] right-[5%] z-10 size-[80px]" src={Eagle} alt="" />
-            <img className="absolute bottom-[9%] right-[46.5%] xl:bottom-[6%] xl:right-[44%] z-10 size-[25px] xl:size-[50px]" src={Global} alt="" />
+            <img className="absolute bottom-[13%] right-[48%] sm:bottom-[12%] md:bottom-[9%] sm:right-[46.5%] xl:bottom-[6%] xl:right-[44%] z-10 size-[15px] sm:size-[25px] xl:size-[50px]" src={Global} alt="" />
           </form>
           <button className="bg-[var(--primary-color)] text-[var(--tertiary-color)]  text-2xl lg:text-3xl  p-2 rounded w-full shadow-md shadow-black" type="button" onClick={navigateGuest}>Guest Login</button>
         </section>

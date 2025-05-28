@@ -80,8 +80,8 @@ const checkClick = (target) => {
       <img className="absolute top-5 left-[46%] sm:left-[49%] z-10 size-[60px] lg:size-[80px]" src={Eagle} alt="" />
 
       <section className="main-left 3xl:w-[850px] max-w-[full] 3xl:max-w-[50%] flex flex-col 3xl:items-stretch items-center gap-2 sm:gap-10 3xl:gap-0">
-        <h1 className="text-[1.5rem] sm:text-[4rem] 2xl:text-[6rem] 3xl:text-[8rem] text-[var(--primary-color)] px-2 ">Welcome to the Main Page!</h1>
-        <p className="text-[1rem] sm:text-[2rem] py-6 px-2 text-[var(--primary-color)] ">Mini Catch Phrase here!</p>
+        <h1 className="text-[1.5rem] sm:text-[4rem] 2xl:text-[6rem] 3xl:text-[8rem] text-[var(--primary-color)] px-2 ">The Arachnid Threat</h1>
+        <p className="text-[1rem] sm:text-[2rem] py-6 px-2 text-[var(--primary-color)] ">Explore the anatomy, tactics, and history of the Warrior and Hopper bugs</p>
         <div className="flex justify-start px-2 pb-6 items-center">
           <button
             className="  text-xl sm:text-2xl w-[300px] sm:w-[400px]  py-2 rounded bg-[var(--quarternary-color)] text-[var(--primary-color)] text-shadow-xs text-shadow-orange shadow-md shadow-black transition-all ease-in-out hover:bg-[var(--primary-color)] hover:text-[var(--tertiary-color)] "
@@ -132,7 +132,7 @@ const checkClick = (target) => {
             <div className={(" flex-col justify-center items-start pl-5 pr-[4rem] gap-5 h-full")+(arachnidInfo ===0 && warriorTarget == true ? " flex": " hidden")}>
               <h2 className="text-xl lg:text-[45px] text-[var(--primary-color)]">Bio Statistics</h2>
               <h3 className="text-lg lg:text-[30px]">Warrior Arachnid</h3>
-              <ul className="text-[9px] lg:text-xl flex flex-col gap-2">
+              <ul className="text-[9px] lg:text-xl flex flex-col gap-1 lg:gap-2">
                 <li className="flex  gap-2">
                   <p className="font-bold ">Height:</p>
                   <p>~2.5 meters at the head</p>
@@ -164,28 +164,97 @@ const checkClick = (target) => {
 
               </ul>
             </div>
-            <div className={("text-blue-400")+(arachnidInfo===1 && warriorTarget == true ? " flex": " hidden")}>
-              <h2>Test One</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam voluptatibus voluptates doloribus quam, alias est aliquid saepe possimus iure exercitationem inventore enim officia nesciunt ipsa vero porro repudiandae reprehenderit accusantium modi impedit. Sed, asperiores esse nulla veniam possimus cupiditate voluptatem nesciunt hic dolor ullam facere sint laudantium cumque. Dolorem, fugit consequuntur, molestias voluptatem enim maxime ratione neque optio magnam consequatur fuga cum deleniti ab id officia unde ipsum sapiente. Tenetur necessitatibus minus laudantium eum inventore maxime enim ab adipisci.</p>
+            <div className={("flex-col justify-center items-start pl-5 pr-[4rem] gap-5 h-full")+(arachnidInfo===1 && warriorTarget == true ? " flex": " hidden")}>
+              <h2 className="text-xl lg:text-[45px] text-[var(--primary-color)]">Attack Patterns</h2>
+              <h3 className="text-lg lg:text-[30px]">Warrior Arachnid</h3>
+              <ul className="text-[9px] lg:text-xl flex flex-col gap-2">
+                <li className="flex  gap-2">
+                  <p className="font-bold ">Attack:</p>
+                  <p>Slashing with forelegs and impaling enemies with sharp claws</p>
+                </li>
+                <li className="flex  gap-2">
+                  <p className="font-bold ">Charge:</p>
+                  <p>Runs full-speed into enemy formations, often targeting armored units</p>
+                </li>
+                <li className="flex  gap-2">
+                  <p className="font-bold ">Tactics:</p>
+                  <p>Functions best in groups, overwhelming enemies through sheer numbers</p>
+                </li>
+                <li className="flex  gap-2">
+                  <p className="font-bold ">Focus:</p>
+                  <p>Soaks up damage while frontline units wear down defenders</p>
+                </li>
+              </ul>
             </div>
-            <div className={("text-green-400 ")+(arachnidInfo===2 && warriorTarget == true ? " flex": " hidden")}>
-              <h2>Test One</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam voluptatibus voluptates doloribus quam, alias est aliquid saepe possimus iure exercitationem inventore enim officia nesciunt ipsa vero porro repudiandae reprehenderit accusantium modi impedit. Sed, asperiores esse nulla veniam possimus cupiditate voluptatem nesciunt hic dolor ullam facere sint laudantium cumque. Dolorem, fugit consequuntur, molestias voluptatem enim maxime ratione neque optio magnam consequatur fuga cum deleniti ab id officia unde ipsum sapiente. Tenetur necessitatibus minus laudantium eum inventore maxime enim ab adipisci.</p>
+            <div className={("flex-col justify-center items-start pl-5 pr-[4rem] gap-5 h-full")+(arachnidInfo===2 && warriorTarget == true ? " flex": " hidden")}>
+              <h2 className="text-xl lg:text-[45px] text-[var(--primary-color)]">History</h2>
+              <h3 className="text-lg lg:text-[30px]">Warrior Arachnid</h3>
+              <p className="text-[9px] lg:text-xl flex flex-col gap-2">
+                Warrior Bugs are the frontline infantry of the Arachnid species, bred purely for combat. They are the most frequently encountered bugs in battle and form the bulk of the Bug horde. Discovered early during the First Bug War, Warriors devastated entire outposts and proved impervious to conventional tactics until the Mobile Infantry adopted high-powered weaponry and tactics involving strategic retreat and terrain use.
+              </p>
             </div>
 
             {/* The Great Barrier  */}
 
-            <div className={(" flex-col pl-5 pr-[4rem]")+(arachnidInfo ===0 && warriorTarget == false ? " flex": " hidden")}>
-              <h2>Test One</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam voluptatibus voluptates doloribus quam, alias est aliquid saepe possimus iure exercitationem inventore enim officia nesciunt ipsa vero porro repudiandae reprehenderit accusantium modi impedit. Sed, asperiores esse nulla veniam possimus cupiditate voluptatem nesciunt hic dolor ullam facere sint laudantium cumque. Dolorem, fugit consequuntur, molestias voluptatem enim maxime ratione neque optio magnam consequatur fuga cum deleniti ab id officia unde ipsum sapiente. Tenetur necessitatibus minus laudantium eum inventore maxime enim ab adipisci.</p>
+            <div className={(" flex-col justify-center items-start pl-5 pr-[4rem] gap-5 h-full")+(arachnidInfo ===0 && warriorTarget == false ? " flex": " hidden")}>
+              <h2 className="text-xl lg:text-[45px] text-[var(--primary-color)]">Bio Statistics</h2>
+              <h3 className="text-lg lg:text-[30px] text-[var(--secondary-color)]">Hopper Arachnid</h3>
+              <ul className="text-[9px] lg:text-xl flex flex-col gap-2">
+                <li className="flex  gap-2">
+                  <p className="font-bold ">Wingspan:</p>
+                  <p>~6 meters</p>
+                </li>
+                <li className="flex  gap-2">
+                  <p className="font-semibold">Length:</p>
+                  <p>~3 meters</p>
+                </li>
+                <li className="flex  gap-2">
+                  <p className="font-semibold">Weight:</p>
+                  <p>~800-1,200 kg </p>
+                </li>
+                <li className="flex  gap-2">
+                  <p className="font-semibold">Flight:</p>
+                  <p>Short bursts, not true sustained flight</p>
+                </li>
+                <li className="flex  gap-2">
+                  <p className="font-semibold">Agility:</p>
+                  <p>Very agile in air with dive-bomb attack patterns</p>
+                </li>
+                <li className="flex  gap-2">
+                  <p className="font-semibold">Exoskeleton:</p>
+                  <p>Thinner than Warrior, but still durable</p>
+                </li>
+
+              </ul>
             </div>
-            <div className={("text-red-400")+(arachnidInfo===1 && warriorTarget == false ? " flex": " hidden")}>
-              <h2>Test One</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam voluptatibus voluptates doloribus quam, alias est aliquid saepe possimus iure exercitationem inventore enim officia nesciunt ipsa vero porro repudiandae reprehenderit accusantium modi impedit. Sed, asperiores esse nulla veniam possimus cupiditate voluptatem nesciunt hic dolor ullam facere sint laudantium cumque. Dolorem, fugit consequuntur, molestias voluptatem enim maxime ratione neque optio magnam consequatur fuga cum deleniti ab id officia unde ipsum sapiente. Tenetur necessitatibus minus laudantium eum inventore maxime enim ab adipisci.</p>
+            <div className={("flex-col justify-center items-start pl-5 pr-[4rem] gap-5 h-full")+(arachnidInfo===1 && warriorTarget == false ? " flex": " hidden")}>
+              <h2 className="text-xl lg:text-[45px] text-[var(--primary-color)]">Attack Patterns</h2>
+              <h3 className="text-lg lg:text-[30px] text-[var(--secondary-color)]">Hopper Arachnid</h3>
+              <ul className="text-[9px] lg:text-xl flex flex-col gap-2">
+                <li className="flex  gap-2">
+                  <p className="font-bold ">Attack:</p>
+                  <p>Drops from the sky onto unsuspecting targets</p>
+                </li>
+                <li className="flex  gap-2">
+                  <p className="font-bold ">Dive:</p>
+                  <p>Launches from the air to impale or decapitate with front appendages</p>
+                </li>
+                <li className="flex  gap-2">
+                  <p className="font-bold ">Tactics:</p>
+                  <p>Attacks quickly from above, then retreats to reposition</p>
+                </li>
+                <li className="flex  gap-2">
+                  <p className="font-bold ">Focus:</p>
+                  <p>Distracts and scatters enemies, making them vulnerable to ground-based Warriors</p>
+                </li>
+              </ul>
             </div>
-            <div className={("text-purple-400 ")+(arachnidInfo===2 && warriorTarget == false ? " flex": " hidden")}>
-              <h2>Test One</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam voluptatibus voluptates doloribus quam, alias est aliquid saepe possimus iure exercitationem inventore enim officia nesciunt ipsa vero porro repudiandae reprehenderit accusantium modi impedit. Sed, asperiores esse nulla veniam possimus cupiditate voluptatem nesciunt hic dolor ullam facere sint laudantium cumque. Dolorem, fugit consequuntur, molestias voluptatem enim maxime ratione neque optio magnam consequatur fuga cum deleniti ab id officia unde ipsum sapiente. Tenetur necessitatibus minus laudantium eum inventore maxime enim ab adipisci.</p>
+            <div className={("flex-col justify-center items-start pl-5 pr-[4rem] gap-5 h-full")+(arachnidInfo===2 && warriorTarget == false ? " flex": " hidden")}>
+              <h2 className="text-xl lg:text-[45px] text-[var(--primary-color)]">History</h2>
+              <h3 className="text-lg lg:text-[30px] text-[var(--secondary-color)]">Hoppper Arachnid</h3>
+              <p className="text-[9px] lg:text-xl flex flex-col gap-2">
+                Hoppers were encountered later in the Bug conflict, first appearing during jungle operations where their aerial attacks took a heavy toll on troops unaccustomed to vertical threats. Believed to be a specialized caste developed to counter human air superiority, Hoppers added a new dimension to Arachnid assaults, forcing the Federation to adapt to three-dimensional combat on both land and air.
+              </p>
             </div>
           </div>
           <div className="arrow-area  lg:h-[15%] w-full flex justify-evenly items-center  border-t-2 ">
