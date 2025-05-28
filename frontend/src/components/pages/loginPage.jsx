@@ -57,7 +57,7 @@ const LoginPage = () => {
 
   return (
     
-    <div className=" bg-[url(images/geranimo.jpg)] bg-cover bg-center bg-no-repeat  flex flex-col gap-5 xl:py-0 py-5 xl:px-0 px-5 justify-center items-center h-full xl:h-screen ">
+    <div className=" bg-[url(../images/geranimo.jpg)] bg-cover bg-center bg-no-repeat  flex flex-col gap-5 xl:py-0 py-5 xl:px-0 px-5 justify-center items-center h-full xl:h-screen ">
       <h2 className="text-2xl lg:text-3xl xl:text-[3rem] text-white text-shadow-md text-shadow-black">Service Gurantees Citizenship</h2>
       <main className="bg-white/10 backdrop-blur-md shadow-md shadow-black  p-3 xl:p-7 justify-center items-center xl:items-stretch flex flex-col xl:flex-row rounded-md gap-7 w-[380px] sm:w-[420px]  xl:w-[1222px] text-[var(--primary-color)]">
         <section className="login-left w-[360px] h-[360px] sm:h-[380px] sm:w-[380px] xl:h-[600px] xl:w-[700px] flex justify-center  xl:pt-0 pt-0 sm:pt-2">

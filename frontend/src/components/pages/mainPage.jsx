@@ -78,7 +78,7 @@ const scrollToTarget = () => {
 
   return (
     <div className=" ">
-      <main className="hero-section bg-[url(images/background0.png)] bg-cover bg-center bg-no-repeat bg-[var(--tertiary-color)] flex flex-col 3xl:flex-row justify-center sm:justify-between items-center h-full 3xl:h-screen relative px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:pt-0 pt-[110px]">
+      <main className="hero-section bg-[url(../images/background0.png)] bg-cover bg-center bg-no-repeat bg-[var(--tertiary-color)] flex flex-col 3xl:flex-row justify-center sm:justify-between items-center h-full 3xl:h-screen relative px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:pt-0 pt-[110px]">
       <button onClick={handleLogout} className="group absolute z-10 top-5 left-[6%]  delay-500">
         <p className="transition-all text-sm lg:text-base ease-in-out text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] font-semibold">Return</p>
         <MdOutlineKeyboardDoubleArrowLeft className="transition-all ease-in-out  text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] group-hover:translate-x-[-4px] text-[40px] lg:text-[50px] "/>
@@ -97,7 +97,7 @@ const scrollToTarget = () => {
         </div>
 
       </section>
-      <section className="main-right z-10 bg-[url(images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat w-full h-[400px]  3xl:w-[700px] 3xl:h-full xl:rounded-none rounded-md">
+      <section className="main-right z-10 bg-[url(../images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat w-full h-[400px]  3xl:w-[700px] 3xl:h-full xl:rounded-none rounded-md">
         <Canvas>
           <Suspense fallback={<SuspenseLoader/>}>
             <SphereSciFi  scale={sizes.sphereScale}/>
@@ -113,7 +113,7 @@ const scrollToTarget = () => {
           </svg>
       </div>
       </main>
-      <main className="main-info-section bg-[url(images/background0.png)] bg-cover  bg-no-repeat h-full 3xl:h-screen relative  bg-[var(--tertiary-color)] flex flex-col-reverse 3xl:flex-row justify-center sm:justify-between items-center px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:pb-5 3xl:py-0 py-[200px] 3xl:gap-0 gap-5 " ref={mainAreaRef}>
+      <main className="main-info-section bg-[url(../images/background0.png)] bg-cover  bg-no-repeat h-full 3xl:h-screen relative  bg-[var(--tertiary-color)] flex flex-col-reverse 3xl:flex-row justify-center sm:justify-between items-center px-[1.5rem] sm:px-[5rem] 3xl:px-[7rem] 3xl:pb-5 3xl:py-0 py-[200px] 3xl:gap-0 gap-5 " ref={mainAreaRef}>
         <div class="custom-shape-divider-top-1748315651">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" class="shape-fill"></path>
@@ -270,7 +270,7 @@ const scrollToTarget = () => {
             </button>
           </div>
         </section>
-        <section className="w-full h-[400px]  3xl:w-[700px] 3xl:h-full  bg-[url(images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat xl:rounded-b-md rounded-md ">
+        <section className="w-full h-[400px]  3xl:w-[700px] 3xl:h-full  bg-[url(../images/rothenberg.jpg)] bg-cover bg-center bg-no-repeat xl:rounded-b-md rounded-md ">
           <Canvas >
             <Suspense fallback={<SuspenseLoader/>}>
               <OrbitControls/>
